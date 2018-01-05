@@ -93,7 +93,7 @@ def getName(idPlayer, idServer):
     except:
         return (False)
 
-def getBannedWord(idServer):
+def getBannedWords(idServer):
     f = "SELECT word FROM bannedWords WHERE idServer = '{}'".format(idServer)
     row = executeCommand(f)
     return (row)
