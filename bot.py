@@ -10,7 +10,7 @@ import re
 
 
 Client = discord.Client(command_prefix="")
-client = commands.Bot()
+client = commands.Bot(command_prefix="")
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.DEBUG)
