@@ -131,7 +131,7 @@ async def on_message(message):
     i = 0
     while (i < len(editWord1)):
         if editWord1[i] in message.content.lower():
-            position = message.content.find(editWord[i])
+            position = message.content.find(editWord1[i])
             message.content = message.content[0: position] + editWord2[i] + message.content[position + len(editWord1[i]):]
             await client.edit_message(message, message.content)
             print("Message a editer!")
