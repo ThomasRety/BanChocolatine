@@ -108,6 +108,14 @@ def getEditsWords(idServer):
         editWords.append(truc[1])
     return wordBan, editWords
 
+def insertEditWords(idServer, wordBan, wordEdit):
+    f = "INSERT INO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
+    executeCommand(f)
+
+def insertBannedWord(idServer, bannedWord):
+    f = "INSERT INTO bannedWords(idServer, wordBan) VALUES('{}', '{}')".format(idServer, bannedWord)
+    executeCommand(f)
+    
 @client.event
 async def on_message(message):
     insertPlayer(message)
@@ -138,7 +146,7 @@ async def on_message(message):
             tab = message.content.split('|')
             firstWord = tab[0]
             secondWord = tab[1]
-            insertWordReplaced(message.server.id, firstWord, secondWord)
+            insertEditWords(message.server.id, firstWord, secondWord)
             client.send_message(message.channel, "Effectué!")
             print("fin replace")
         except Exception as E:
@@ -149,7 +157,7 @@ async def on_message(message):
             print("debut ban")
             tab = message.content.split(' ')
             bannedWord = tab[1]
-            insertBannedWord(bannedWord)
+            insertBannedWord(message.server.id, bannedWord)
             client.send_message(message.channel, "Effectué!")
             print("fin ban")
         except Exception as E:
