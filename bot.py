@@ -109,7 +109,7 @@ def getEditsWords(idServer):
     return wordBan, editWords
 
 def insertEditWords(idServer, wordBan, wordEdit):
-    f = "INSERT INO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
+    f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
     executeCommand(f)
 
 def insertBannedWord(idServer, bannedWord):
