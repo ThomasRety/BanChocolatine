@@ -129,7 +129,8 @@ async def on_message(message):
 
     if authorizationLevel < 3:
         return
-    if (message.content.startswith("!replace ")):
+    if (message.content.lower().startswith("!replace ")):
+        print("Replace!")
         try:
             message.content = message.content[len("!replace "):]
             tab = message.content.split('|')
