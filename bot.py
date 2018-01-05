@@ -118,6 +118,7 @@ async def on_message(message):
     for word in bannedWords:
         if word in message.content.lower():
             client.delete_message(message)
+            print("Message a detruire!")
             return
     i = 0
     while (i < len(editWord1)):
@@ -125,12 +126,11 @@ async def on_message(message):
             position = message.content.find(word)
             message.content = message.content[0: position] + editWord2[i] + message.content[position + len(editWord1[i]):]
             client.edit_message(message, message.content)
-
+            print("Message a editer!")
 
     if authorizationLevel < 3:
         return
     if (message.content.lower().startswith("!replace ")):
-        print("Replace!")
         try:
             message.content = message.content[len("!replace "):]
             tab = message.content.split('|')
