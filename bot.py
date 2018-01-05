@@ -99,7 +99,7 @@ def getBannedWords(idServer):
     return (row)
 
 def getEditsWords(idServer):
-    f = "SELECT wordBan, wordEdit from editWords WHERE idServer = '{}'".format(isServer)
+    f = "SELECT wordBan, wordEdit from editWords WHERE idServer = '{}'".format(idServer)
     row = executeCommand(f)
     wordBan = list()
     editWords = list()
@@ -113,8 +113,8 @@ async def on_message(message):
     insertPlayer(message)
     authorizationLevel = getAuthorizationLevel(message)
     print("J'existe")
-    bannedWords = getBannedWords(message.server)
-    editWord1, editWord2 = getEditsWords(message.server)
+    bannedWords = getBannedWords(message.server.id)
+    editWord1, editWord2 = getEditsWords(message.server.id)
     for word in bannedWords:
         if word in message.content.lower():
             client.delete_message(message)
