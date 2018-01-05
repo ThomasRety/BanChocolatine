@@ -128,28 +128,34 @@ async def on_message(message):
             client.edit_message(message, message.content)
             print("Message a editer!")
 
+    print(authorizationLevel)
     if authorizationLevel < 3:
         return
     if (message.content.lower().startswith("!replace ")):
         try:
+            print("debut replace")
             message.content = message.content[len("!replace "):]
             tab = message.content.split('|')
             firstWord = tab[0]
             secondWord = tab[1]
             insertWordReplaced(message.server.id, firstWord, secondWord)
             client.send_message(message.channel, "Effectué!")
+            print("fin replace")
         except:
             client.send_message(message.channel, "usage: !replace badWord|goodWord")
     if (message.content.startswith("!ban ")):
         try:
+            print("debut ban")
             tab = message.content.split(' ')
             bannedWord = tab[1]
             insertBannedWord(bannedWord)
             client.send_message(message.channel, "Effectué!")
+            print("fin ban")
         except:
             client.send_message(message.channel, "!usage: !ban badWord")
     if (message.content.startswith("!setLevel ")):
         try:
+            print("debut setLevel")
             tab = message.content.lower().split(' ')
             idPlayer = safeData(tab[1])
             clientName = getName(idPlayer, message.server.id)
@@ -161,6 +167,7 @@ async def on_message(message):
                 return
             setAuthorizationLevel(message.server.id, idPlayer, newAuth)
             await client.send_message(message.channel, "L'user {} a maintenant un level d'accréditation : {}".format(clientName, str(newAuth)))
+            print("fin setLevel")
         except Exception as E:
             print("Exception in setAuthorizationLevel: ", E)
             await client.send_message(message.channel, "Usage: !setAuthorizationLevel idPlayer authorizationLevel")
