@@ -9,7 +9,7 @@ import logging
 import re
 
 
-Client = discord.Client()
+Client = discord.Client(command_prefix="")
 client = commands.Bot()
 
 logger = logging.getLogger('discord')
