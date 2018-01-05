@@ -125,15 +125,15 @@ async def on_message(message):
     editWord1, editWord2 = getEditsWords(message.server.id)
     for word in bannedWords:
         if word in message.content.lower():
-            client.delete_message(message)
+            await client.delete_message(message)
             print("Message a detruire!")
             return
     i = 0
     while (i < len(editWord1)):
         if editWord1[i] in message.content.lower():
-            position = message.content.find(word)
+            position = message.content.find(editWord[i])
             message.content = message.content[0: position] + editWord2[i] + message.content[position + len(editWord1[i]):]
-            client.edit_message(message, message.content)
+            await client.edit_message(message, message.content)
             print("Message a editer!")
 
     print(authorizationLevel)
@@ -147,22 +147,22 @@ async def on_message(message):
             firstWord = tab[0]
             secondWord = tab[1]
             insertEditWords(message.server.id, firstWord, secondWord)
-            client.send_message(message.channel, "Effectué!")
+            await client.send_message(message.channel, "Effectué!")
             print("fin replace")
         except Exception as E:
             print(E)
-            client.send_message(message.channel, "usage: !replace badWord|goodWord")
+            await client.send_message(message.channel, "usage: !replace badWord|goodWord")
     if (message.content.startswith("!ban ")):
         try:
             print("debut ban")
             tab = message.content.split(' ')
             bannedWord = tab[1]
             insertBannedWord(message.server.id, bannedWord)
-            client.send_message(message.channel, "Effectué!")
+            await client.send_message(message.channel, "Effectué!")
             print("fin ban")
         except Exception as E:
             print(E)
-            client.send_message(message.channel, "!usage: !ban badWord")
+            await client.send_message(message.channel, "!usage: !ban badWord")
     if (message.content.startswith("!setLevel ")):
         try:
             print("debut setLevel")
