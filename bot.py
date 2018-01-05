@@ -112,7 +112,7 @@ def getEditsWords(idServer):
 async def on_message(message):
     insertPlayer(message)
     authorizationLevel = getAuthorizationLevel(message)
-        
+    print("J'existe")
     bannedWords = getBannedWords(message.server)
     editWord1, editWord2 = getEditsWords(message.server)
     for word in bannedWords:
@@ -136,6 +136,7 @@ async def on_message(message):
             firstWord = tab[0]
             secondWord = tab[1]
             insertWordReplaced(message.server.id, firstWord, secondWord)
+            
         except:
             client.send_message(message.channel, "usage: !replace badWord|goodWord")
     if (message.content.startswith("!ban ")):
