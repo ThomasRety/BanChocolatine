@@ -141,7 +141,8 @@ async def on_message(message):
             insertWordReplaced(message.server.id, firstWord, secondWord)
             client.send_message(message.channel, "Effectué!")
             print("fin replace")
-        except:
+        except Exception as E:
+            print(E)
             client.send_message(message.channel, "usage: !replace badWord|goodWord")
     if (message.content.startswith("!ban ")):
         try:
@@ -151,7 +152,8 @@ async def on_message(message):
             insertBannedWord(bannedWord)
             client.send_message(message.channel, "Effectué!")
             print("fin ban")
-        except:
+        except Exception as E:
+            print(E)
             client.send_message(message.channel, "!usage: !ban badWord")
     if (message.content.startswith("!setLevel ")):
         try:
