@@ -135,6 +135,7 @@ async def on_message(message):
             message.content = message.content[0: position] + editWord2[i] + message.content[position + len(editWord1[i]):]
             await client.edit_message(message, message.content)
             print("Message a editer!")
+        i += 1
 
     print(authorizationLevel)
     if authorizationLevel < 3:
