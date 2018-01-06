@@ -113,7 +113,7 @@ def insertEditWords(idServer, wordBan, wordEdit):
     executeCommand(f)
 
 def insertBannedWord(idServer, bannedWord):
-    f = "INSERT INTO bannedWords(idServer, wordBan) VALUES('{}', '{}')".format(idServer, bannedWord)
+    f = "INSERT INTO bannedWords(idServer, word) VALUES('{}', '{}')".format(idServer, bannedWord)
     executeCommand(f)
     
 @client.event
