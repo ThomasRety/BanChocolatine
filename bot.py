@@ -123,6 +123,7 @@ async def on_message(message):
     print("J'existe")
     bannedWords = getBannedWords(message.server.id)
     editWord1, editWord2 = getEditsWords(message.server.id)
+    print(bannedWords)
     for word in bannedWords:
         if word in message.content.lower():
             print("Message a detruire!")
