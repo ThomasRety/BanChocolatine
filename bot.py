@@ -76,7 +76,7 @@ def insertPlayer(message):
         if row is False:
             return
         if len(row) == 0:
-            f = "INSERT INTO player(idPlayer, name, idServer) VALUES('{}', '{}', '{}')".format(idPlayer, name, idServer)
+            f = "INSERT INTO player(idPlayer, name, idServer, authorizationLevel) VALUES('{}', '{}', '{}', 0)".format(idPlayer, name, idServer)
             executeCommand(f)
         else:
             f = "UPDATE player SET name = '{}' WHERE idPlayer = '{}' AND idServer = '{}'".format(name, idPlayer, idServer)
