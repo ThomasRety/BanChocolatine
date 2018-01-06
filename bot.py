@@ -125,7 +125,7 @@ async def on_message(message):
     editWord1, editWord2 = getEditsWords(message.server.id)
     print(bannedWords)
     for word in bannedWords:
-        if word in message.content.lower():
+        if word[0] in message.content.lower():
             print("Message a detruire!")
             await client.delete_message(message)
             print("Message a detruire!")
