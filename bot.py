@@ -139,7 +139,11 @@ async def on_message(message):
             print("Message a editer!")
         i += 1
 
-    print(authorizationLevel)
+    if (message.content.lower().startswith("!ancien")):
+        time = message.author.joined_at()
+        s = "Vous avez rejoint le serveur le " + time.strftime("%Y-%m-%d %H:%M:%S")
+        await client.send_message(message.channel, s)
+        
     if authorizationLevel < 3:
         return
     if (message.content.lower().startswith("!replace ")):
