@@ -148,7 +148,7 @@ async def on_message(message):
         nb_member = message.server.member_count
         large = message.server.large
         owner = message.server.owner
-        owner = ower.name
+        owner = owner.name
         verification_level = message.server.verification_level
         afk_timeout = message.server.afk_timeout
         region = message.server.region
