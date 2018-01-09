@@ -143,7 +143,31 @@ async def on_message(message):
         time = message.author.joined_at()
         s = "Vous avez rejoint le serveur le " + time.strftime("%Y-%m-%d %H:%M:%S")
         await client.send_message(message.channel, s)
+
+    if (message.content.lower().startswith("!server"):
+        nb_member = message.server.member_count
+        large = message.server.large
+        owner = message.server.owner
+        owner = ower.name
+        verification_level = message.server.verification_level
+        afk_timeout = message.server.afk_timeout
+        region = message.server.region
+        lroles = message.server.roles
+        name = message.server.name
+        created_at = message.server.created_at.strftime("%Y-%m-%d %H:%M:%S")
+        s = "Le server a été crée le " + created_at
+        s += "\nLe créateur du serveur se nomme: " + owner
+        s += "\nCe serveur est large: " + large
+        s += "\nIl possède " + nb_member + " membres"
+        s += "\nLe serveur est hébergé ici: " + region
+        s += "\nEt il possède un niveau de vérification de " + verification_level
+        s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
+        s += "\nIl possède la liste des rôles suivant: "
+        for roles in lroles:
+            s += "\t" + roles
+        await client.send_message(message.channel, s)
         
+    
     if authorizationLevel < 3:
         return
     if (message.content.lower().startswith("!replace ")):
