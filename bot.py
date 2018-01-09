@@ -146,7 +146,7 @@ async def on_message(message):
 
     if (message.content.lower().startswith("!server")):
         nb_member = message.server.member_count
-        large = message.server.large
+        large = str(message.server.large)
         owner = message.server.owner
         owner = owner.name
         verification_level = message.server.verification_level
