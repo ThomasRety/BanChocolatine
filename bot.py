@@ -144,7 +144,7 @@ async def on_message(message):
         s = "Vous avez rejoint le serveur le " + time.strftime("%Y-%m-%d %H:%M:%S")
         await client.send_message(message.channel, s)
 
-    if (message.content.lower().startswith("!server"):
+    if (message.content.lower().startswith("!server")):
         nb_member = message.server.member_count
         large = message.server.large
         owner = message.server.owner
