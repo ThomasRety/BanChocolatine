@@ -159,7 +159,7 @@ async def on_message(message):
         s += "\nLe créateur du serveur se nomme: " + owner
         s += "\nCe serveur est large: " + large
         s += "\nIl possède " + nb_member + " membres"
-        s += "\nLe serveur est hébergé ici: " + region
+        s += "\nLe serveur est hébergé ici: " + str(region)
         s += "\nEt il possède un niveau de vérification de " + verification_level
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
         s += "\nIl possède la liste des rôles suivant: "
