@@ -164,7 +164,7 @@ async def on_message(message):
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
         s += "\nIl possède la liste des rôles suivant: "
         for roles in lroles:
-            s += "\t" + roles
+            s += "\t" + str(roles)
         await client.send_message(message.channel, s)
         
     
