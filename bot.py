@@ -150,7 +150,7 @@ async def on_message(message):
         owner = message.server.owner
         owner = owner.name
         verification_level = str(message.server.verification_level)
-        afk_timeout = message.server.afk_timeout
+        afk_timeout = str(message.server.afk_timeout)
         region = str(message.server.region)
         lroles = message.server.roles
         name = message.server.name
