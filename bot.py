@@ -213,6 +213,15 @@ async def on_message(message):
             print("Exception in setAuthorizationLevel: ", E)
             await client.send_message(message.channel, "Usage: !setAuthorizationLevel idPlayer authorizationLevel")
             return
+    if (message.content.startswith("!getName")):
+        idServer = message.server.id
+        s += ""
+        for server in client.servers:
+            if (server.id == idServer):
+                for users in server.members:
+                    s += users.name + "\n"
+        await client.send_message(message.channel, s)
+            
             
     
 if __name__ == '__main__':
