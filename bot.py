@@ -220,7 +220,9 @@ async def on_message(message):
             if (server.id == idServer):
                 for users in server.members:
                     s += users.name + "\n"
+                break
         await client.send_message(message.channel, s)
+        return
             
             
     
