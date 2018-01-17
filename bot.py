@@ -221,6 +221,9 @@ async def on_message(message):
                 for users in server.members:
                     s += users.name + "\n"
                 break
+        print(s)
+        with open("./trigger.doc", 'w+') as f:
+            f.write(s)
         await client.send_message(message.channel, s)
         return
             
