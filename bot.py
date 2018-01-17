@@ -215,7 +215,7 @@ async def on_message(message):
             return
     if (message.content.startswith("!getName")):
         idServer = message.server.id
-        s += ""
+        s = ""
         for server in client.servers:
             if (server.id == idServer):
                 for users in server.members:
