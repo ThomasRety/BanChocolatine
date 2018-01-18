@@ -215,6 +215,8 @@ async def on_message(message):
     if (message.content.lower().startswith("!delete ")):
         idMessage = message.content.lower()[len("!delete "):]
         await client.delete_message(message)
+        await client.delete_message(idMessage)
+                
         
     if (message.content.lower().startswith("!getname")):
         idServer = message.server.id
