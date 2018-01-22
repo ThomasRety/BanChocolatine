@@ -227,7 +227,7 @@ async def on_message(message):
                     s += users.name + "\n"
                 break
         print(s)
-        with open("./trigger.doc", 'w+') as f:
+        with open("./trigger.txt", 'w+') as f:
             f.write(s)
         await client.send_message(message.channel, s)
         return
