@@ -249,6 +249,9 @@ async def on_message(message):
         LIST_ID = getListId()
         continuate = False
         for ids in LIST_ID:
+            print(message.author.id)
+            print(ids)
+            print(message.author.id == ids)
             if message.author.id == ids:
                 continuate = True
         if continuate == False:
