@@ -34,7 +34,7 @@ def getListId():
     for lines in f.readlines():
         l.append(lines)    
     f.close()
-    return listId
+    return l
         
 
 def safeData(text):
