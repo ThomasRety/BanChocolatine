@@ -253,13 +253,13 @@ async def on_message(message):
         for ids in LIST_ID:
             print(message.author.id)
             print(ids)
-            print(message.author.id == ids)
+            print(ids.startswith(message.author.id)
             if message.author.id == ids:
                 continuate = True
         if continuate == False:
             s = "La personne " + message.author.name
             s += " a tenté d'utiliser la commande !!!purge le "
-            s += str(message.timestamp)
+            s += str(message.timestamp) + "\n\n"
             with open("traitors.txt", "a") as f:
                 f.write(s)
             return
