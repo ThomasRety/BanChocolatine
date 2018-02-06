@@ -28,6 +28,13 @@ dbPath = "./database/data.db"
 ########################################################### IA #############################################################################
 ############################################################################################################################################
 
+def getListId():
+    f = open("ids.txt", 'r')
+    listId = [line.split(' ') for line in f.readlines()]
+    f.close()
+    return listId
+        
+
 def safeData(text):
     a = ""
     b = re.compile("[^']").findall(text)
@@ -123,7 +130,7 @@ async def on_message(message):
     authorizationLevel = getAuthorizationLevel(message)
     bannedWords = getBannedWords(message.server.id)
     editWord1, editWord2 = getEditsWords(message.server.id)
-    for word in bannedWords:
+    """for word in bannedWords:
         if word[0] in message.content.lower():
             print("Message a detruire!")
             await client.delete_message(message)
@@ -137,7 +144,7 @@ async def on_message(message):
             await client.edit_message(message, message.content)
             print("Message a editer!")
         i += 1
-
+    """
 
     if (message.content.lower().startswith('!sansami')):
         await client.send_message(message.channel, "C'est triste que tu sois sans ami. Mais je m'en branle.")
@@ -165,12 +172,8 @@ async def on_message(message):
         s += "\nLe serveur est hébergé ici: " + str(region)
         s += "\nEt il possède un niveau de vérification de " + verification_level
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
-        s += "\nIl possède la liste des rôles suivant: "
-        for roles in lroles:
-            s += "\t" + str(roles)
         await client.send_message(message.channel, s)
         
-    
     if authorizationLevel < 3:
         return
     if (message.content.lower().startswith("!replace ")):
@@ -235,8 +238,43 @@ async def on_message(message):
             f.write(s)
         await client.send_message(message.channel, s)
         return
-            
-            
+    if (message.content.lower().startswith("!!!purge ")):
+        try:
+            nbMessage = message.content["!!!purge ":]
+            nbMessage = int(nbMessage)
+        except Exception as E:
+            print(E)
+            return
+        LIST_ID = getListId()
+        continuate = False
+        for ids in LIST_ID:
+            if message.author.id == ids:
+                continuate = True
+        if continuate == False:
+            s = "La personne " + message.author.name
+            s += " a tenté d'utiliser la commande !!!purge le "
+            s += str(message.timestamp)
+            with open("traitors.txt", "a") as f:
+                f.write(s)
+            return
+        
+        await client.send_message(message.channel, "Are you really Sure?")
+        def check(msg):
+            if (msg.content == ""):
+                return True
+            return False
+
+        def check2(msg):
+            if (msg.content == "azerty"):
+                await client.delete_message(msg)
+                return True
+            return False
+        message = await client.wait_for_message(check=check)
+        await client.send_message(message.channel, "Please enter PassWord: ")
+        message = await client.wait_for_message(check=check2)
+        await client.purge_from(message.channel, limit=nbMessage)
+        await client.send_message(message.channel, "Votre demande de purge a bien été effectuée et a été inscrite au registre des purges. Bonnes journées Commandant!")
+        
     
 if __name__ == '__main__':
     import sys
