@@ -240,7 +240,7 @@ async def on_message(message):
         return
     if (message.content.lower().startswith("!!!purge ")):
         try:
-            nbMessage = message.content["!!!purge ":]
+            nbMessage = message.content[len("!!!purge "):]
             nbMessage = int(nbMessage)
         except Exception as E:
             print(E)
