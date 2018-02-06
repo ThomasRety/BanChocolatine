@@ -266,7 +266,6 @@ async def on_message(message):
 
         def check2(msg):
             if (msg.content == "azerty"):
-                await client.delete_message(msg)
                 return True
             return False
         message = await client.wait_for_message(check=check)
