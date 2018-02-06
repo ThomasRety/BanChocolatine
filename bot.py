@@ -30,7 +30,9 @@ dbPath = "./database/data.db"
 
 def getListId():
     f = open("ids.txt", 'r')
-    listId = [line.split(' ') for line in f.readlines()]
+    l = []
+    for lines in f.readlines():
+        l.append(lines)    
     f.close()
     return listId
         
