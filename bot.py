@@ -147,10 +147,14 @@ async def on_message(message):
             await client.edit_message(message, message.content)
             print("Message a editer!")
         i += 1
-    """
+
 
     if (message.content.lower().startswith('!sansami')):
-        await client.send_message(message.channel, "C'est triste que tu sois sans ami. Mais je m'en branle.")
+        await client.send_message(message.channel, "C'est triste que tu sois sans ami. Mais je m'en branle.")"""
+
+    if (message.content.lower().starswith("bonjour")):
+        await client.send_message(message.channel, "Bonjour " + message.author.name)
+        return
         
     if (message.content.lower().startswith("!ancien")):
         time = message.author.joined_at
