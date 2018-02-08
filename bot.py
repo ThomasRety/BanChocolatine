@@ -253,7 +253,7 @@ async def on_message(message):
         for ids in LIST_ID:
             print(message.author.id)
             print(ids)
-            print(ids.startswith(message.author.id)
+            print(ids.startswith(message.author.id))
             if (message.author.id == ids):
                 continuate = True
         if continuate == False:
