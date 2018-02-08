@@ -131,6 +131,8 @@ async def on_message(message):
     insertPlayer(message)
     authorizationLevel = getAuthorizationLevel(message)
     print(authorizationLevel)
+    if (client.user.id == message.author.id):
+        return
     bannedWords = getBannedWords(message.server.id)
     editWord1, editWord2 = getEditsWords(message.server.id)
     """for word in bannedWords:
