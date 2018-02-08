@@ -130,7 +130,6 @@ def insertBannedWord(idServer, bannedWord):
 async def on_message(message):
     insertPlayer(message)
     authorizationLevel = getAuthorizationLevel(message)
-    print(authorizationLevel)
     if (client.user.id == message.author.id):
         return
     bannedWords = getBannedWords(message.server.id)
