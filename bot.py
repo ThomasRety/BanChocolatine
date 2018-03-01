@@ -153,7 +153,7 @@ async def on_message(message):
     if (message.content.lower().startswith('!sansami')):
         await client.send_message(message.channel, "C'est triste que tu sois sans ami. Mais je m'en branle.")"""
 
-    if (message.content.lower().startswith("bonjour")):
+    if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
         
