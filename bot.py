@@ -171,6 +171,7 @@ async def on_message(message):
         afk_timeout = str(message.server.afk_timeout)
         region = str(message.server.region)
         lroles = message.server.roles
+        print(len(lroles))
         name = message.server.name
         created_at = message.server.created_at.strftime("%Y-%m-%d %H:%M:%S")
         s = "Le server a été crée le " + created_at
