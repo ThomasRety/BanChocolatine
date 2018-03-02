@@ -171,7 +171,8 @@ async def on_message(message):
         afk_timeout = str(message.server.afk_timeout)
         region = str(message.server.region)
         lroles = message.server.roles
-        print(len(lroles))
+        idServer = message.server.id
+        lemojis = len(message.server.emojis)
         name = message.server.name
         created_at = message.server.created_at.strftime("%Y-%m-%d %H:%M:%S")
         s = "Le server a été crée le " + created_at
@@ -179,6 +180,9 @@ async def on_message(message):
         s += "\nCe serveur est large: " + large
         s += "\nIl possède " + nb_member + " membres"
         s += "\nLe serveur est hébergé ici: " + str(region)
+        s += "\nIl possède {} roles".format(str(len(lroles)))
+        s += "\nSon id est: " + str(idServer)
+        s += "\nIl possède {} emojis customs".format(str(lemojis))
         s += "\nEt il possède un niveau de vérification de " + verification_level
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
         print(s)
