@@ -180,6 +180,7 @@ async def on_message(message):
         s += "\nLe serveur est hébergé ici: " + str(region)
         s += "\nEt il possède un niveau de vérification de " + verification_level
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
+        print(s)
         await client.send_message(message.channel, s)
         
     if authorizationLevel < 3:
