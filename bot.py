@@ -91,7 +91,11 @@ def deleteCIA_FILES(idPlayer):
 
 def getCIA_FILES(idServer):
     f = "SELECT idPlayer FROM CIA_FILES WHERE idServer = '{}'".format(idServer)
-    return (executeCommand(f))
+    rows = executeCommand(f)
+    a = list()
+    for row in rows:
+        a.push(row[0])
+    return (a)
 
 def insertPlayer(message):
     idPlayer = message.author.id
