@@ -94,7 +94,7 @@ def getCIA_FILES(idServer):
     rows = executeCommand(f)
     a = list()
     for row in rows:
-        a.push(row[0])
+        a.append(row[0])
     return (a)
 
 def insertPlayer(message):
