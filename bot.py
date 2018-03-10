@@ -320,7 +320,7 @@ async def on_message_edit(before, after):
                         
 @client.event
 async def on_message_delete(message):
-    LIST_CIA_FILES = getCIA_FILES(before.server.id)
+    LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
         if (message.author.content == ids):
             checkIfCreate(message.author.id)
