@@ -327,6 +327,7 @@ async def on_message_delete(message):
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
         if (message.author.id == ids):
+            print("message delete")
             checkIfCreate(message.author.id)
             print("message delete")
             with open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
