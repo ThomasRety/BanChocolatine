@@ -76,8 +76,8 @@ def getAuthorizationLevel(message):
         print(E)
         
 def checkIfCreate(directory):
-    if not os.path.exists(directory):
-        os.makedirs(directory)
+    if not os.path.exists('./classified/{}'.format(directory)):
+        os.makedirs('./classified/{}'.format(directory))
     
         
 def insertCIA_FILES(idPlayer, serverID):
