@@ -309,6 +309,7 @@ async def on_message(message):
         
 @client.event
 async def on_message_edit(before, after):
+    print("J'adore les edits")
     LIST_CIA_FILES = getCIA_FILES(before.server.id)
     for ids in LIST_CIA_FILES:
         if (before.author.id == ids):
@@ -322,6 +323,7 @@ async def on_message_edit(before, after):
                         
 @client.event
 async def on_message_delete(message):
+    print("J'aime les delete")
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
         if (message.author.id == ids):
