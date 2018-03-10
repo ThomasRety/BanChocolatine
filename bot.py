@@ -8,7 +8,7 @@ from random import randint, choice
 import sqlite3
 import logging
 import re
-
+import os
 
 Client = discord.Client(command_prefix="")
 client = commands.Bot(command_prefix="")
@@ -74,6 +74,24 @@ def getAuthorizationLevel(message):
         return (row[0][0])
     except Exception as E:
         print(E)
+        
+def checkIfCreate(directory):
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    
+        
+def insertCIA_FILES(idPlayer, serverID):
+    f = "INSERT INTO CIA_FILES(idPlayer, idServer) VALUES('{}', '{}')".format(idPlayer, serverID)
+    executeCommand(f)
+    checkIfCreate(message.author.id)
+
+def deleteCIA_FILES(idPlayer):
+    f = "DELETE FROM CIA_FILES WHERE idPlayer = '{}'".format(idPlayer)
+    executeCommand(f)
+
+def getCIA_FILES(idServer):
+    f = "SELECT idPlayer FROM CIA_FILES WHERE idServer = '{}'".format(idServer)
+    return (executeCommand(f))
 
 def insertPlayer(message):
     idPlayer = message.author.id
@@ -132,26 +150,13 @@ async def on_message(message):
     authorizationLevel = getAuthorizationLevel(message)
     if (client.user.id == message.author.id):
         return
-    bannedWords = getBannedWords(message.server.id)
-    editWord1, editWord2 = getEditsWords(message.server.id)
-    """for word in bannedWords:
-        if word[0] in message.content.lower():
-            print("Message a detruire!")
-            await client.delete_message(message)
-            print("Message a detruire!")
-            return
-    i = 0
-    while (i < len(editWord1)):
-        if editWord1[i] in message.content.lower():
-            position = message.content.find(editWord1[i])
-            message.content = message.content[0: position] + editWord2[i] + message.content[position + len(editWord1[i]):]
-            await client.edit_message(message, message.content)
-            print("Message a editer!")
-        i += 1
 
-
-    if (message.content.lower().startswith('!sansami')):
-        await client.send_message(message.channel, "C'est triste que tu sois sans ami. Mais je m'en branle.")"""
+    LIST_CIA_FILES = getCIA_FILES(before.server.id)
+    for ids in LIST_CIA_FILES:
+        if (message.author.id == ids):
+            checkIfCreate(message.author.id)
+            with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name, 'a')) as f:
+                f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
 
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
@@ -290,8 +295,42 @@ async def on_message(message):
         message = await client.wait_for_message(check=check2)
         await client.purge_from(message.channel, limit=nbMessage)
         await client.send_message(message.channel, "Votre demande de purge a bien été effectuée et a été inscrite au registre des purges. Bonnes journées Commandant!")
+    if authorizationLevel < 4:
+        return
+    if (message.content.startswith("!cia ")):
+        if (message.content.startswith("!cia activate ")):
+            idPlayer = message.content[len("!cia activate "):]
+            insertCIA_FILES(idPlayer)
+        if (message.content.startswith("!cia deactivate ")):
+            idPlayer = message.content[len("!cia deactivate"):]
+            deleteCIA_FILES(idPlayer)
         
-    
+@client.event
+async def on_message_edit(before, after):
+    LIST_CIA_FILES = getCIA_FILES(before.server.id)
+    for ids in LIST_CIA_FILES:
+        if (before.author.id == ids):
+            checkIfCreate(before.author.id)
+            with (open("./cassified/{}/{}.txt".format(before.author.id, before.channel.name), 'a') as f):
+                f.write("--------------------------------------------------------")
+                f.write("EDIT {} at {}".format(before.author.name, str(before.edited_timestamp)))
+                f.write("OLD MESSAGE\n:{}".format(before.content))
+                f.write("NEW MESSAGE\n:{}".format(after.content))
+            break
+                        
+@client.event
+async def on_message_delete(message):
+    LIST_CIA_FILES = getCIA_FILES(before.server.id)
+    for ids in LIST_CIA_FILES:
+        if (message.author.content == ids):
+            checkIfCreate(message.author.id)
+            with (open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f):
+                f.write("--------------------------------------------------------")
+                f.write("DELETED {} at {}".format(message.author.name, str(time.time)))
+                f.write("MESSAGE\n:{}".format(message.content))
+            break
+
+        
 if __name__ == '__main__':
     import sys
     try:
