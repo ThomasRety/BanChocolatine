@@ -300,7 +300,7 @@ async def on_message(message):
     if (message.content.startswith("!cia ")):
         if (message.content.startswith("!cia activate ")):
             idPlayer = message.content[len("!cia activate "):]
-            insertCIA_FILES(idPlayer)
+            insertCIA_FILES(idPlayer, idServer)
             print("CIA ACTIVATED PLAYER ", idPlayer)
         if (message.content.startswith("!cia deactivate ")):
             idPlayer = message.content[len("!cia deactivate"):]
