@@ -326,6 +326,8 @@ async def on_message_delete(message):
     print("J'aime les delete")
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
+        print(message.author.id)
+        print(ids)
         if (message.author.id == ids):
             print("message delete")
             checkIfCreate(message.author.id)
