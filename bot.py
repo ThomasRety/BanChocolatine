@@ -326,6 +326,7 @@ async def on_message_delete(message):
     for ids in LIST_CIA_FILES:
         if (message.author.id == ids):
             checkIfCreate(message.author.id)
+            print("message delete")
             with open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                 f.write("--------------------------------------------------------")
                 f.write("DELETED {} at {}".format(message.author.name, str(time.time)))
