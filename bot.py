@@ -156,16 +156,21 @@ async def on_message(message):
         return
 
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
-    for ids in LIST_CIA_FILES:
-        if (message.author.id == ids):
-            checkIfCreate(message.author.id)
-            with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name, 'a')) as f:
-                f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
-
+    try:
+        for ids in LIST_CIA_FILES:
+            if (message.author.id == ids):
+                checkIfCreate(message.author.id)
+                with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name, 'a')) as f:
+                    f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
+    except Exception as E:
+        pass
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
-        
+
+    if (message.content.lower().startswith("!me")):
+        await client.send_message(message.channel, "Ton compte a été créé le " + str(message.author.created_at))
+        return
     if (message.content.lower().startswith("!ancien")):
         time = message.author.joined_at
         s = "Vous avez rejoint le serveur le " + time.strftime("%Y-%m-%d %H:%M:%S")
