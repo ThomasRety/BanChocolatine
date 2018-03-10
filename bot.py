@@ -301,9 +301,11 @@ async def on_message(message):
         if (message.content.startswith("!cia activate ")):
             idPlayer = message.content[len("!cia activate "):]
             insertCIA_FILES(idPlayer)
+            print("CIA ACTIVATED PLAYER ", idPlayer)
         if (message.content.startswith("!cia deactivate ")):
             idPlayer = message.content[len("!cia deactivate"):]
             deleteCIA_FILES(idPlayer)
+            print("CIA DEACTIVATED PLAYER ", idPlayer)
         
 @client.event
 async def on_message_edit(before, after):
