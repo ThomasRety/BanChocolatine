@@ -83,7 +83,7 @@ def checkIfCreate(directory):
 def insertCIA_FILES(idPlayer, serverID):
     f = "INSERT INTO CIA_FILES(idPlayer, idServer) VALUES('{}', '{}')".format(idPlayer, serverID)
     executeCommand(f)
-    checkIfCreate(message.author.id)
+    checkIfCreate(idPlayer)
 
 def deleteCIA_FILES(idPlayer):
     f = "DELETE FROM CIA_FILES WHERE idPlayer = '{}'".format(idPlayer)
@@ -324,7 +324,7 @@ async def on_message_edit(before, after):
 async def on_message_delete(message):
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
-        if (message.author.content == ids):
+        if (message.author.id == ids):
             checkIfCreate(message.author.id)
             with open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                 f.write("--------------------------------------------------------")
