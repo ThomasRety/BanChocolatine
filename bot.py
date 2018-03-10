@@ -313,7 +313,6 @@ async def on_message(message):
         
 @client.event
 async def on_message_edit(before, after):
-    print("J'adore les edits")
     LIST_CIA_FILES = getCIA_FILES(before.server.id)
     for ids in LIST_CIA_FILES:
         if (before.author.id == ids):
@@ -327,13 +326,9 @@ async def on_message_edit(before, after):
                         
 @client.event
 async def on_message_delete(message):
-    print("J'aime les delete")
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
-        print(message.author.id)
-        print(ids)
         if (message.author.id == ids):
-            print("message delete")
             checkIfCreate(message.author.id)
             print("message delete")
             with open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
