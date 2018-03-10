@@ -151,7 +151,7 @@ async def on_message(message):
     if (client.user.id == message.author.id):
         return
 
-    LIST_CIA_FILES = getCIA_FILES(before.server.id)
+    LIST_CIA_FILES = getCIA_FILES(message.server.id)
     for ids in LIST_CIA_FILES:
         if (message.author.id == ids):
             checkIfCreate(message.author.id)
