@@ -161,7 +161,7 @@ async def on_message(message):
             if (message.author.id == ids):
                 checkIfCreate(message.author.id)
                 with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
-                    f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
+                    f.write("\nNEW MESSAGE {}: {}\n".format(str(message.timestamp), message.content))
     except Exception as E:
         print(E)
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
@@ -328,10 +328,10 @@ async def on_message_edit(before, after):
         if (before.author.id == ids):
             checkIfCreate(before.author.id)
             with open("./classified/{}/{}.txt".format(before.author.id, before.channel.name), 'a') as f:
-                f.write("--------------------------------------------------------")
-                f.write("EDIT {} at {}".format(before.author.name, str(before.edited_timestamp)))
-                f.write("OLD MESSAGE\n:{}".format(before.content))
-                f.write("NEW MESSAGE\n:{}".format(after.content))
+                f.write("\n--------------------------------------------------------")
+                f.write("\nEDIT {} at {}".format(before.author.name, str(before.edited_timestamp)))
+                f.write("\nOLD MESSAGE\n:{}".format(before.content))
+                f.write("\nNEW MESSAGE\n:{}".format(after.content))
             break
                         
 @client.event
@@ -342,9 +342,9 @@ async def on_message_delete(message):
             checkIfCreate(message.author.id)
             print("message delete")
             with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
-                f.write("--------------------------------------------------------")
-                f.write("DELETED {} at {}".format(message.author.name, str(time.time)))
-                f.write("MESSAGE\n:{}".format(message.content))
+                f.write("\n--------------------------------------------------------")
+                f.write("\nDELETED {} at {}".format(message.author.name, str(time.time)))
+                f.write("\nMESSAGE\n:{}".format(message.content))
             break
 
         
