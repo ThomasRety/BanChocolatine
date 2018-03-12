@@ -343,7 +343,7 @@ async def on_message_delete(message):
             print("message delete")
             with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                 f.write("\n--------------------------------------------------------")
-                f.write("\nDELETED {} at {}".format(message.author.name, str(time.time)))
+                f.write("\nDELETED {} at {}".format(message.author.name, str(time.time())))
                 f.write("\nMESSAGE\n:{}".format(message.content))
             break
 
