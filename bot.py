@@ -147,7 +147,8 @@ def insertEditWords(idServer, wordBan, wordEdit):
 def insertBannedWord(idServer, bannedWord):
     f = "INSERT INTO bannedWords(idServer, word) VALUES('{}', '{}')".format(idServer, bannedWord)
     executeCommand(f)
-    
+
+
 @client.event
 async def on_message(message):
     insertPlayer(message)
