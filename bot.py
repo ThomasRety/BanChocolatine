@@ -160,7 +160,7 @@ async def on_message(message):
         for ids in LIST_CIA_FILES:
             if (message.author.id == ids):
                 checkIfCreate(message.author.id)
-                with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name, 'a')) as f:
+                with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                     f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
     except Exception as E:
         print(E)
