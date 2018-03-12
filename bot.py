@@ -327,7 +327,7 @@ async def on_message_edit(before, after):
     for ids in LIST_CIA_FILES:
         if (before.author.id == ids):
             checkIfCreate(before.author.id)
-            with open("./cassified/{}/{}.txt".format(before.author.id, before.channel.name), 'a') as f:
+            with open("./classified/{}/{}.txt".format(before.author.id, before.channel.name), 'a') as f:
                 f.write("--------------------------------------------------------")
                 f.write("EDIT {} at {}".format(before.author.name, str(before.edited_timestamp)))
                 f.write("OLD MESSAGE\n:{}".format(before.content))
@@ -341,7 +341,7 @@ async def on_message_delete(message):
         if (message.author.id == ids):
             checkIfCreate(message.author.id)
             print("message delete")
-            with open("./cassified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
+            with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                 f.write("--------------------------------------------------------")
                 f.write("DELETED {} at {}".format(message.author.name, str(time.time)))
                 f.write("MESSAGE\n:{}".format(message.content))
