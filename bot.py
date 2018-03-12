@@ -171,6 +171,11 @@ async def on_message(message):
     if (message.content.lower().startswith("!me")):
         await client.send_message(message.channel, "Ton compte a été créé le " + str(message.author.created_at))
         return
+
+    if (message.content.lower().startswith('!avatar')):
+        await client.send_message(message.channel, str(message.author.avatar_url))
+        return
+    
     if (message.content.lower().startswith("!ancien")):
         time = message.author.joined_at
         s = "Vous avez rejoint le serveur le " + time.strftime("%Y-%m-%d %H:%M:%S")
