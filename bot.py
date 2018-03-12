@@ -163,7 +163,7 @@ async def on_message(message):
                 with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name, 'a')) as f:
                     f.write("NEW MESSAGE {}:\n{}\n".format(str(message.timestamp), message.content))
     except Exception as E:
-        pass
+        print(E)
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
