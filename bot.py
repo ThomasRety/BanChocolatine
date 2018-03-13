@@ -144,7 +144,14 @@ def inscriptPersonn(idPlayer, idServer):
     f = "select hasWin from player where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
     row = executeCommand(f)
     row = row[0][0]
-    print(row)
+    if (row == 1):
+        return 0
+    f = "select participating from player where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
+    row = executeCommand(f)
+    row = row[0][0]
+    if (row == 1):
+        return 1
+    return 2
     
 
 def insertEditWords(idServer, wordBan, wordEdit):
@@ -174,9 +181,16 @@ async def on_message(message):
         print(E)
 
     if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
-        inscriptPersonn(message.author.id, message.server.id)
+        row = inscriptPersonn(message.author.id, message.server.id)
+        if (row == 0):
+            await client.send_message(message.channel, "Erreur: tu as déjà gagné, tu ne peux pas te réinscrire!")
+            return
+        if (row == 1):
+            await client.send_message(message.channel, "Erreur: tu es déjà inscrit {}".format(message.author.name))
+            return
+        
         print("Je suis inscrit")
-        await client.send_message(message.channel, "{} est maintenant inscrite!".format(message.author.name))
+        await client.send_message(message.channel, "{} est maintenant inscrit!".format(message.author.name))
         return
     
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
