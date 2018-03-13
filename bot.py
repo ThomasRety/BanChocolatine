@@ -157,7 +157,7 @@ def inscriptPersonn(idPlayer, idServer):
     return 2
 
 def getWinner(idServer):
-    f = "select name, id from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
+    f = "select name, idPlayer from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
     row = executeCommand(f)
     print(row)
     return (row)
