@@ -202,7 +202,7 @@ async def on_message(message):
         return
 
     if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
-        name = getWinner(idServer)
+        name = getWinner(message.server.id)
         await client.send_message(message.channel, name)
         
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
