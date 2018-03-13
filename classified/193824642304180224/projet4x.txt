@@ -1,0 +1,74 @@
+
+NEW MESSAGE 2018-03-12 09:35:22.507000: PATATE
+
+--------------------------------------------------------
+EDIT Tristan Starkl L'Immortel at None
+OLD MESSAGE
+:PATATE
+NEW MESSAGE
+:PATATEE
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at <built-in function time>
+MESSAGE
+:PATATEE
+NEW MESSAGE 2018-03-12 09:36:39.918000: lancer
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1520847401.596665
+MESSAGE
+:lancer
+NEW MESSAGE 2018-03-12 09:57:37.002000: Same 😄
+
+NEW MESSAGE 2018-03-12 09:58:03.016000: T'as vu un peu plus haut ce que j'ai écrit sur le SCRUM et l'agile?
+
+NEW MESSAGE 2018-03-12 10:08:32.287000: Le sprint en gros c'est un temps imparti (dans notre cas un mois) dans lequel on réalise les User Stories (épopées si t'a le site en français)
+
+NEW MESSAGE 2018-03-12 10:08:51.078000: La vélocité c'est la somme de la complexité de chaque épopée qu'on a réalisé durant un sprint
+
+NEW MESSAGE 2018-03-12 10:09:16.956000: Ce sont les devs qui déterminent la complexité d'une épopoée
+
+NEW MESSAGE 2018-03-12 10:09:36.265000: Par exemple "Afficher un système solaire" est une grande complexité
+
+NEW MESSAGE 2018-03-12 10:09:57.693000: Tellement grande qu'on la subdivise en plein de petites trucs qui la compose mais qu'on estime plus facile
+
+NEW MESSAGE 2018-03-12 10:10:08.022000: Comme par exemple "Faire les classes de conversions"
+
+NEW MESSAGE 2018-03-12 10:10:25.222000: Attend y'a une faute
+
+NEW MESSAGE 2018-03-12 10:10:37.176000: User Stories = récit utilisateur
+
+NEW MESSAGE 2018-03-12 10:10:49.760000: Épopée = ensemble de récit utilisateur
+
+NEW MESSAGE 2018-03-12 13:09:40.907000: !cia deactivate 193824642304180224
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1520860183.341304
+MESSAGE
+:!cia deactivate 193824642304180224
+NEW MESSAGE 2018-03-12 16:57:30.386000: https://www.youtube.com/watch?v=vISRn5qFrkM <@294348098917105664>
+
+--------------------------------------------------------
+EDIT Tristan Starkl L'Immortel at None
+OLD MESSAGE
+:https://www.youtube.com/watch?v=vISRn5qFrkM <@294348098917105664>
+NEW MESSAGE
+:https://www.youtube.com/watch?v=vISRn5qFrkM <@294348098917105664>
+NEW MESSAGE 2018-03-12 17:07:12.938000: <@!239385576132968450> J'en connais un qu'à taffé wtf
+
+NEW MESSAGE 2018-03-12 17:07:22.413000: pls stop
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1520874447.0339158
+MESSAGE
+:pls stop
+NEW MESSAGE 2018-03-12 17:07:33.283000: pls stop
+
+NEW MESSAGE 2018-03-12 17:07:47.873000: T'en a fucking genre 60 qu'ont popé
+
+NEW MESSAGE 2018-03-12 18:02:05.410000: Presque tous Jay's 😄
+
+NEW MESSAGE 2018-03-12 18:05:00.661000: Il m'en manque quelques un pour les calculs d'orbites 😄
+
+NEW MESSAGE 2018-03-12 18:05:18.627000: <@316773802770038797> tu veux voir à quoi ressemble les calculs d'orbite là maintenant tout de suite?
+
+NEW MESSAGE 2018-03-12 18:06:29.385000: 

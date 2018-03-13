@@ -1,0 +1,20 @@
+
+NEW MESSAGE 2018-03-12 11:10:14.109000: Ce salon sert à ça
+
+NEW MESSAGE 2018-03-13 10:56:33.272000: <@!385403219913867265> <@398955237311774721> = SPOCK CONFIRMED
+
+NEW MESSAGE 2018-03-13 10:56:40.020000: Je suis le créateur de KGBot
+
+NEW MESSAGE 2018-03-13 10:56:43.885000: Je suis le créateur de Spocj
+
+--------------------------------------------------------
+EDIT Tristan Starkl L'Immortel at None
+OLD MESSAGE
+:Je suis le créateur de Spocj
+NEW MESSAGE
+:Je suis le créateur de Spock
+NEW MESSAGE 2018-03-13 10:56:47.270000: CQFD
+
+NEW MESSAGE 2018-03-13 10:56:58.069000: Maintenant arrêtez de vénérer ma création
+
+NEW MESSAGE 2018-03-13 18:22:25.843000: !server
