@@ -146,6 +146,7 @@ def inscriptPersonn(idPlayer, idServer):
     row = executeCommand(f)
     row = row[0][0]
     if (row == 1):
+        print("Déjà gagné level inscript")
         return 0
     f = "select participating from player where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
     row = executeCommand(f)
@@ -197,6 +198,7 @@ async def on_message(message):
     if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
         row = inscriptPersonn(message.author.id, message.server.id)
         if (row == 0):
+            print('Déjà gagné')
             await client.send_message(message.channel, "Erreur: tu as déjà gagné, tu ne peux pas te réinscrire!")
             return
         if (row == 1):
