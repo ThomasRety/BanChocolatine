@@ -160,8 +160,13 @@ def inscriptPersonn(idPlayer, idServer):
 def getWinner(idServer):
     f = "select name, idPlayer from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
     row = executeCommand(f)
+    if (len(row) == 0):
+        return ("Erreur: il n'y a plus de participants :scream:")
     secure_random = SystemRandom()
-    return (secure_random.choice(row))
+    row = secure_random.choice(row)
+    f = "update player set hasWin = 1, participating = 1 where idPlayer = '{}' and idServer = '{}'".format(row[1], idServer)
+    executeCommand(f)
+    return (row[0])
 
 def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
