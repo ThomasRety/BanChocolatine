@@ -140,6 +140,13 @@ def getEditsWords(idServer):
         editWords.append(truc[1])
     return wordBan, editWords
 
+def inscriptPersonn(idPlayer, idServer):
+    f = "select hasWin from player where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
+    row = executeCommand(f)
+    row = row[0][0]
+    print(row)
+    
+
 def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
     executeCommand(f)
@@ -165,6 +172,13 @@ async def on_message(message):
                     f.write("\nNEW MESSAGE {}: {}\n".format(str(message.timestamp), message.content))
     except Exception as E:
         print(E)
+
+    if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
+        inscriptPersonn(message.author.id, message.server.id)
+        print("Je suis inscrit")
+        await client.send_message(message.channel, "{} est maintenant inscrite!".format(message.author.name))
+        return
+    
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
