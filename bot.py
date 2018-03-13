@@ -155,7 +155,12 @@ def inscriptPersonn(idPlayer, idServer):
     f = "update player set participating = 1 where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
     executeCommand(f)
     return 2
-    
+
+def getWinner(idServer):
+    f = "select name, id from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
+    row = executeCommand(f)
+    print(row)
+    return (row)
 
 def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
@@ -195,7 +200,11 @@ async def on_message(message):
         print("Je suis inscrit")
         await client.send_message(message.channel, "{} est maintenant inscrit!".format(message.author.name))
         return
-    
+
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
+        name = getWinner(idServer)
+        await client.send_message(message.channel, name)
+        
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
