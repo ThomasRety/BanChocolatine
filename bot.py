@@ -149,8 +149,11 @@ def inscriptPersonn(idPlayer, idServer):
     f = "select participating from player where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
     row = executeCommand(f)
     row = row[0][0]
+    print(row)
     if (row == 1):
         return 1
+    f = "update player set participating = 1 where idPlayer = '{}' and idServer = '{}'".format(idPlayer, idServer)
+    executeCommand(f)
     return 2
     
 
