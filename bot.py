@@ -159,8 +159,8 @@ def inscriptPersonn(idPlayer, idServer):
 def getWinner(idServer):
     f = "select name, idPlayer from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
     row = executeCommand(f)
-    print(row)
-    return (row)
+    print(row[0])
+    return (row[0])
 
 def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
