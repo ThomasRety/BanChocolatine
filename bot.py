@@ -201,7 +201,7 @@ async def on_message(message):
 
     if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785")):
         resetInscription(message.server.id)
-        await client.send_message(message.channel, "les inscriptions sont reset nigga")
+        await client.send_message(message.channel, "Les inscriptions sont reset mon commandant!")
         return
     
     if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
