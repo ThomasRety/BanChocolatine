@@ -4,7 +4,7 @@ from discord.ext.commands import Bot
 from discord.ext import commands
 import asyncio
 import time
-from random import randint, choice
+from random import randint, choice, SystemRandom
 import sqlite3
 import logging
 import re
@@ -27,6 +27,7 @@ dbPath = "./database/data.db"
 ############################################################################################################################################
 ########################################################### IA #############################################################################
 ############################################################################################################################################
+
 
 def getListId():
     f = open("ids.txt", 'r')
@@ -159,7 +160,8 @@ def inscriptPersonn(idPlayer, idServer):
 def getWinner(idServer):
     f = "select name, idPlayer from player where idServer = '{}' and hasWin = 0 and participating = 1".format(idServer)
     row = executeCommand(f)
-    return (choice(row))
+    secure_random = SystemRandom()
+    return (secure_random.choice(row))
 
 def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
