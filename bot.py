@@ -173,6 +173,10 @@ def insertEditWords(idServer, wordBan, wordEdit):
     f = "INSERT INTO editWords(idServer, wordBan, wordEdit) VALUES('{}', '{}', '{}')".format(idServer, wordBan, wordEdit)
     executeCommand(f)
 
+def resetInscription(idServer):
+    f = "update player set hasWin = 0, participating = 0 where idServer = '{}'".format(idServer)
+    executeCommand(f)
+    
 def insertBannedWord(idServer, bannedWord):
     f = "INSERT INTO bannedWords(idServer, word) VALUES('{}', '{}')".format(idServer, bannedWord)
     executeCommand(f)
@@ -195,6 +199,11 @@ async def on_message(message):
     except Exception as E:
         print(E)
 
+    if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785")):
+        resetInscription(message.server.id)
+        await client.send_message(message.channel, "les inscriptions sont reset nigga")
+        return
+    
     if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
         row = inscriptPersonn(message.author.id, message.server.id)
         if (row == 0):
