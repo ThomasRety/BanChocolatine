@@ -329,6 +329,7 @@ async def on_message(message):
             f.write(s)
         await client.send_message(message.channel, s)
         return
+    
     if (message.content.lower().startswith("!!!purge ")):
         try:
             nbMessage = message.content[len("!!!purge "):]
@@ -354,7 +355,7 @@ async def on_message(message):
         
         await client.send_message(message.channel, "Are you really Sure?")
         def check(msg):
-            if (msg.content == ""):
+            if (msg.content == "yes"):
                 return True
             return False
 
