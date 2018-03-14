@@ -343,7 +343,7 @@ async def on_message(message):
             print(message.author.id)
             print(ids)
             print(ids.startswith(message.author.id))
-            if (message.author.id == ids):
+            if (ids.startswith(message.author.id):
                 continuate = True
         if continuate == False:
             s = "La personne " + message.author.name
