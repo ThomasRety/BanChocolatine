@@ -215,7 +215,7 @@ async def on_message(message):
     if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224" or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
         await client.send_message(message.channel, getListInscrit(message.server.id))
         return
-                                  
+    
     if (message.content.lower().startswith("!inscription") and message.channel.id == "423190061170032650"):
         row = inscriptPersonn(message.author.id, message.server.id)
         if (row == 0):
@@ -382,6 +382,12 @@ async def on_message(message):
         await client.send_message(message.channel, "Votre demande de purge a bien été effectuée et a été inscrite au registre des purges. Bonnes journées Commandant!")
     if authorizationLevel < 4:
         return
+
+    if (message.content.startswith("!emojis")):
+        listEmojis = message.server.emojis
+        for emo in listEmojis:
+            await client.add_reaction(message, emo)
+            
     if (message.content.startswith("!cia ")):
         if (message.content.startswith("!cia activate ")):
             idPlayer = message.content[len("!cia activate "):]
