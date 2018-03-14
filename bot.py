@@ -185,7 +185,7 @@ def insertBannedWord(idServer, bannedWord):
 def getListInscrit(idServer):
     f = "SELECT name FROM player WHERE participating = 1 AND hasWin = 0 AND idServer = '{}'".format(idServer)
     rows = executeCommand(f)
-    a = "Les inscrit sont: "
+    a = "Les inscrit sont: \n"
     for row in rows:
         a += row[0] + '\n'
     return (a)
