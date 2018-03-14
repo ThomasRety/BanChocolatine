@@ -187,7 +187,7 @@ def getListInscrit(idServer):
     rows = executeCommand(f)
     a = "Les inscrit sont: "
     for row in rows:
-        s += row[0] + '\n'
+        a += row[0] + '\n'
     return (a)
 
 @client.event
