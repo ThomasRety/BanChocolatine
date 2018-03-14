@@ -207,12 +207,12 @@ async def on_message(message):
     except Exception as E:
         print(E)
 
-    if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785")):
+    if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
         resetInscription(message.server.id)
         await client.send_message(message.channel, "Les inscriptions sont reset mon commandant!")
         return
 
-    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224" or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
         await client.send_message(message.channel, getListInscrit(message.server.id))
         return
                                   
@@ -230,7 +230,7 @@ async def on_message(message):
         await client.send_message(message.channel, "{} est maintenant inscrit!".format(message.author.name))
         return
 
-    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224" or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
         name = getWinner(message.server.id)
         await client.send_message(message.channel, name)
         
