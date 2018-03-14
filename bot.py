@@ -184,9 +184,12 @@ def insertBannedWord(idServer, bannedWord):
 
 def getListInscrit(idServer):
     f = "SELECT name FROM player WHERE participating = 1 AND hasWin = 0 AND idServer = '{}'".format(idServer)
-    row = executeCommand(f)
+    rows = executeCommand(f)
     print(row)
-    return ("test")
+    a = "Les inscrit sont: "
+    for row in rows:
+        s += row[0] + '\n'
+    return (a)
 
 @client.event
 async def on_message(message):
