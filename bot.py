@@ -182,6 +182,11 @@ def insertBannedWord(idServer, bannedWord):
     f = "INSERT INTO bannedWords(idServer, word) VALUES('{}', '{}')".format(idServer, bannedWord)
     executeCommand(f)
 
+def getListInscrit(idServer):
+    f = "SELECT name FROM player WHERE participating = 1 AND hasWin = 0 AND idServer = '{}'".format(idServer)
+    row = executeCommand(f)
+    print(row)
+    return ("test")
 
 @client.event
 async def on_message(message):
@@ -204,8 +209,12 @@ async def on_message(message):
         resetInscription(message.server.id)
         await client.send_message(message.channel, "Les inscriptions sont reset mon commandant!")
         return
-    
-    if (message.content.lower().startswith("!inscript") and message.channel.id == "423190061170032650"):
+
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
+        await client.send_message(message.channel, getListInscrit(message.server.id))
+        return
+                                  
+    if (message.content.lower().startswith("!inscription") and message.channel.id == "423190061170032650"):
         row = inscriptPersonn(message.author.id, message.server.id)
         if (row == 0):
             print('Déjà gagné')
