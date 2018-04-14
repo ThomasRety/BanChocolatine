@@ -1,0 +1,394 @@
+
+NEW MESSAGE 2018-03-14 10:46:17.315000: !reset inscriptions
+
+NEW MESSAGE 2018-03-14 10:46:24.350000: (je m'en assurais juste)
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521024386.0124655
+MESSAGE
+:(je m'en assurais juste)
+NEW MESSAGE 2018-03-14 10:47:27.898000: quels commandes?
+
+NEW MESSAGE 2018-03-14 10:50:21.124000: Plus simple, du moment que Jay's se souvient comment on fait mdr 😄
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521024627.3221135
+MESSAGE
+:quels commandes?
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521024632.1176746
+MESSAGE
+:Petit récapitulatif des règles
+!inscription -> vous inscrit. Vous ne pouvez vous inscrire qu'une seule fois, et vous ne pouvez pas vous réinscrire si vous avez déjà gagné
+
+Pour les juges:
+!list -> vous donne la liste de toute les personnes inscrites
+!roll -> tir au sort une personne inscrite
+!reset inscription -> reset les inscription ainsi que les compteurs de victoire
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521024640.2380714
+MESSAGE
+:Plus simple, du moment que Jay's se souvient comment on fait mdr 😄
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521024652.0947647
+MESSAGE
+:!reset inscriptions
+NEW MESSAGE 2018-03-14 17:53:19.514000: <@164076488294006785> je te conseille d'épingler ton message parce qu'il va rapidement disparaître ^^
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521050018.972134
+MESSAGE
+:<@164076488294006785> je te conseille d'épingler ton message parce qu'il va rapidement disparaître ^^
+NEW MESSAGE 2018-03-14 17:56:29.968000: t'a oublié le i de inscriptIon
+
+NEW MESSAGE 2018-03-14 17:56:33.950000: <@!184018254136737793>
+
+NEW MESSAGE 2018-03-14 17:57:58.639000: Ce soir je dirais
+
+NEW MESSAGE 2018-03-14 17:59:23.162000: Mirague, Adepte de Spock - Aujourd'hui à 18:58
+!inscription
+KGBotBOT - Aujourd'hui à 18:58
+mirague est maintenant inscrit!
+
+NEW MESSAGE 2018-03-14 18:09:33.035000: !list
+
+NEW MESSAGE 2018-03-14 18:11:45.385000: le I du debut
+
+NEW MESSAGE 2018-03-14 18:35:03.125000: !list
+
+NEW MESSAGE 2018-03-14 18:36:50.718000: Ne cherchez pas
+
+NEW MESSAGE 2018-03-14 18:36:57.143000: Vous ne pouvez faire cette commande
+
+NEW MESSAGE 2018-03-14 18:37:15.242000: KGBot n'obéit qu'à moi. Stop maintenant, inscrivez-vous plutôt 😃
+
+NEW MESSAGE 2018-03-14 18:37:45.002000: Non
+
+NEW MESSAGE 2018-03-14 18:40:10.375000: Stop.
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521053158.528464
+MESSAGE
+:Stop.
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521053226.85082
+MESSAGE
+:Non
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521053251.3728964
+MESSAGE
+:KGBot n'obéit qu'à moi. Stop maintenant, inscrivez-vous plutôt 😃
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521053260.9338665
+MESSAGE
+:Vous ne pouvez faire cette commande
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521053263.707574
+MESSAGE
+:Ne cherchez pas
+NEW MESSAGE 2018-03-14 19:46:33.535000: !list
+
+NEW MESSAGE 2018-03-14 19:48:26.378000: Utilise !inscription <@273158591643648000>
+
+NEW MESSAGE 2018-03-14 19:48:38.005000: OMG
+
+NEW MESSAGE 2018-03-14 19:48:40.327000: LE BOT EN FEU
+
+NEW MESSAGE 2018-03-14 19:48:41.516000: STOP
+
+NEW MESSAGE 2018-03-14 19:48:49.660000: Enfin ralentissez 😃
+
+NEW MESSAGE 2018-03-14 19:50:07.867000: Vérifiez que chaque personne est inscrit, histoire que le bot meure pas
+
+NEW MESSAGE 2018-03-14 19:50:28.066000: GG raptor
+
+NEW MESSAGE 2018-03-14 19:50:46.123000: <@273158591643648000> Jay's tirera au sort et on te MP
+
+NEW MESSAGE 2018-03-14 19:51:00.832000: <@303985851854094336> tu peux pas utiliser cette commande
+
+NEW MESSAGE 2018-03-14 19:51:09.550000: <@189077619390676994> j'ai confiance en mon bot.
+
+NEW MESSAGE 2018-03-14 19:51:27.503000: (et je suis à côté pour surveiller pour dépanner en cas de problème majeur)
+
+NEW MESSAGE 2018-03-14 19:54:08.872000: T'a compté <@!322091759754543104> ?
+
+NEW MESSAGE 2018-03-14 19:56:42.897000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:43.808000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:44.613000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:45.440000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:47.071000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:48.088000: BREAK
+
+NEW MESSAGE 2018-03-14 19:56:50.111000: UPDATE BOT
+
+NEW MESSAGE 2018-03-14 19:57:12.786000: Fin du break.
+
+NEW MESSAGE 2018-03-14 19:57:17.695000: Vous pouvez revenir 😛
+
+NEW MESSAGE 2018-03-14 19:57:27.935000: JONHATTAN
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521057454.3312278
+MESSAGE
+:JONHATTAN
+NEW MESSAGE 2018-03-14 19:58:23.171000: !len
+
+NEW MESSAGE 2018-03-14 19:58:33.523000: <@!322091759754543104> tient.
+
+NEW MESSAGE 2018-03-14 19:59:36.287000: uniquement djibaw, Jay's et moi <@!322091759754543104>
+
+NEW MESSAGE 2018-03-14 20:02:15.936000: !len
+
+NEW MESSAGE 2018-03-14 20:04:25.254000: !list
+
+NEW MESSAGE 2018-03-14 20:04:39.621000: Et <@!230278412365725696> raptor peut pas le faire non plus cherche pas
+
+NEW MESSAGE 2018-03-14 20:08:17.579000: Pas le bon <@273158591643648000>
+
+NEW MESSAGE 2018-03-14 20:08:57.604000: <@308667583606030338> pouquoi je suis mute sur le chat YT?
+
+NEW MESSAGE 2018-03-14 20:09:08.710000: ...
+
+NEW MESSAGE 2018-03-14 20:09:15.521000: <@!150342658911502336> hawkinG
+
+NEW MESSAGE 2018-03-14 20:48:31.241000: !len
+
+NEW MESSAGE 2018-03-14 20:49:28.524000: !list
+
+NEW MESSAGE 2018-03-14 20:51:42.986000: <@305078602871996416> ?
+
+NEW MESSAGE 2018-03-14 20:51:46.768000: !inscription
+
+NEW MESSAGE 2018-03-14 20:51:59.477000: T'A VU <@164076488294006785> J'ETAIS PAS INSCRIT
+
+NEW MESSAGE 2018-03-14 20:53:16.991000: Elle s'est pas inscrite <@!170258548377387008>
+
+NEW MESSAGE 2018-03-14 20:53:21.866000: enfin je crois
+
+NEW MESSAGE 2018-03-14 20:54:26.385000: Alors je tient à dire que le fait que je spawn en haut est un hasard
+
+NEW MESSAGE 2018-03-14 20:57:10.827000: <@!322091759754543104>
+
+NEW MESSAGE 2018-03-14 20:58:24.387000: <@308667583606030338> hum en théorie oui
+
+NEW MESSAGE 2018-03-14 20:58:46.242000: En pratique j'ai testé qu'avec 4 personnes
+
+NEW MESSAGE 2018-03-14 20:59:14.278000: PERSONNE NE ME CORROMPRA
+
+NEW MESSAGE 2018-03-14 20:59:29.579000: (pour 10€ je multiplie votre chance de tomber par 1)
+
+NEW MESSAGE 2018-03-14 20:59:38.892000: Si <@314126506433445898> c'est désinscrit automatiquement
+
+NEW MESSAGE 2018-03-14 20:59:44.694000: D'ailleurs ils ne peuvent plus se réinscrire
+
+NEW MESSAGE 2018-03-14 21:00:37.576000: J'en appelle à un gagnant <@!322091759754543104> pour tester que vous pouvez pas vous réinscrire
+
+NEW MESSAGE 2018-03-14 21:01:02.323000: Tient <@333166415987081218> toi aussi réessaye de t'inscrire
+
+NEW MESSAGE 2018-03-14 21:01:16.139000: Cool
+
+NEW MESSAGE 2018-03-14 21:01:19.627000: ça fonctionne.
+
+NEW MESSAGE 2018-03-14 21:01:28.400000: (je le savais déjà)
+
+NEW MESSAGE 2018-03-14 21:02:19.581000: <@399481297820712960> j'avais déjà fait les test hier 😃
+
+NEW MESSAGE 2018-03-14 21:02:29.087000: Mais on a reset plusieurs fois le channel
+
+NEW MESSAGE 2018-03-14 21:02:37.971000: D'ailleurs je pourrais le rereset 😉
+
+NEW MESSAGE 2018-03-14 21:02:41.211000: Si j'étais méchant
+
+NEW MESSAGE 2018-03-14 21:02:45.199000: JE SUIS M2CHANT OUBOUB
+
+NEW MESSAGE 2018-03-14 21:02:49.774000: CREIGNEZ MOI WESH
+
+NEW MESSAGE 2018-03-14 21:03:25.173000: <@202863711558303744> c'est moi qui lui ai demandé de tester
+
+NEW MESSAGE 2018-03-14 21:04:39.919000: En vrai en plus vu comment je me suis débrouiller pour faire le random, ça m'obligerait à hacker plusieurs protocoles de sécurité mis en place pour vous faire augmenter vos chance
+
+NEW MESSAGE 2018-03-14 21:04:47.584000: Faudrait faire des copie base de données et tout
+
+NEW MESSAGE 2018-03-14 21:04:51.033000: ça serait relou as fuck
+
+NEW MESSAGE 2018-03-14 21:10:29.905000: Np 😃
+
+NEW MESSAGE 2018-03-14 21:11:00.193000: Ok
+
+NEW MESSAGE 2018-03-14 21:11:30.068000: Si vous devez vous barrez, summonez moi pas Jay's 😃
+
+NEW MESSAGE 2018-03-14 21:12:19.043000: Oui mais pour éviter de le déranger ^^
+
+NEW MESSAGE 2018-03-14 21:16:20.541000: <@170580458420174858> t'a utilisé !emoji?
+
+NEW MESSAGE 2018-03-14 21:16:26.264000: j'ai eu le bot qui a buggé
+
+NEW MESSAGE 2018-03-14 21:34:49.034000: LE MICRO: Microphone AT2020 USB
+
+NEW MESSAGE 2018-03-14 21:35:27.949000: Même pas vu que tu l'avais posté en plus mdr
+
+NEW MESSAGE 2018-03-14 21:35:54.944000: !list
+
+NEW MESSAGE 2018-03-14 21:36:05.864000: !len
+
+NEW MESSAGE 2018-03-14 21:36:52.079000: Et si tu fait gagner du monde ça les enlèves 😛
+
+NEW MESSAGE 2018-03-14 21:37:05.323000: Donc en vrai 119+5 = 124 personnes
+
+NEW MESSAGE 2018-03-14 21:37:38.812000: <@299635343769206794> félictiation
+
+NEW MESSAGE 2018-03-14 21:37:44.951000: <@232495587868672002> aussi
+
+NEW MESSAGE 2018-03-14 21:37:54.221000: <@!239385576132968450>
+
+NEW MESSAGE 2018-03-14 21:37:58.902000: <@261975251229868034>
+
+NEW MESSAGE 2018-03-14 21:38:12.121000: <@311179224247435264>
+
+NEW MESSAGE 2018-03-14 21:38:36.270000: ^^
+
+NEW MESSAGE 2018-03-14 21:38:57.736000: <@164076488294006785> je te les mentionne pour que tu puisse leur envoyer un MP facilement 😃
+
+NEW MESSAGE 2018-03-14 21:39:29.040000: Je tient à dire que!desinscription n'existe pas
+
+--------------------------------------------------------
+EDIT Tristan Starkl L'Immortel at None
+OLD MESSAGE
+:Je tient à dire que!desinscription n'existe pas
+NEW MESSAGE
+:Je tient à dire que !desinscription n'existe pas
+NEW MESSAGE 2018-03-14 21:39:40.757000: Donc ça ne sert ç rien de le dire ^^
+
+NEW MESSAGE 2018-03-14 21:40:10.501000: <@245043589627904001> je te note si jamais tu gagne 😃
+
+NEW MESSAGE 2018-03-14 21:41:33.665000: 😃
+
+NEW MESSAGE 2018-03-14 21:55:57.517000: probablement pas
+
+NEW MESSAGE 2018-03-14 21:56:31.760000: ++
+
+NEW MESSAGE 2018-03-14 22:17:23.227000: !len
+
+NEW MESSAGE 2018-03-14 22:17:59.733000: Pas de réinscription
+
+NEW MESSAGE 2018-03-14 22:18:08.652000: <@!150342658911502336> t'es déjà inscrit
+
+NEW MESSAGE 2018-03-14 22:18:25.432000: ❤
+
+NEW MESSAGE 2018-03-14 22:18:32.117000: (je te voyais écrire <:troll:335149994170384385> )
+
+NEW MESSAGE 2018-03-14 22:18:48.972000: Jamais
+
+NEW MESSAGE 2018-03-14 22:18:51.828000: <:troll:335149994170384385>
+
+NEW MESSAGE 2018-03-14 22:19:26.527000: préparez ael's*
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521065974.1874745
+MESSAGE
+:préparez ael's*
+NEW MESSAGE 2018-03-14 22:19:43.970000: Ah il est plus rapide le fourbe
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521065994.3754814
+MESSAGE
+:Ah il est plus rapide le fourbe
+NEW MESSAGE 2018-03-14 22:20:01.817000: !len <@164076488294006785>
+
+NEW MESSAGE 2018-03-14 22:21:12.859000: <@352110034072633345> <@189077619390676994> <@214107617620918272> <@393856346358939661> <@197318417953456128> gg
+
+NEW MESSAGE 2018-03-14 22:21:34.278000: <@164076488294006785> on voit ton écran
+
+NEW MESSAGE 2018-03-14 22:21:38.021000: et les codes <@164076488294006785>
+
+NEW MESSAGE 2018-03-14 22:22:10.536000: Nan mais faut qu'il le voit
+
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521066133.3996694
+MESSAGE
+:Nan mais faut qu'il le voit
+--------------------------------------------------------
+DELETED Tristan Starkl L'Immortel at 1521066135.0597389
+MESSAGE
+:et les codes <@164076488294006785>
+NEW MESSAGE 2018-03-14 22:22:24.388000: Nan après il va se tromper et m'envoyer le jeu à moi 😃
+
+NEW MESSAGE 2018-03-14 22:28:14.091000: re
+
+NEW MESSAGE 2018-03-14 22:29:29.392000: il pourra je pense
+
+NEW MESSAGE 2018-03-14 22:33:36.481000: 17-18h
+
+NEW MESSAGE 2018-03-14 22:38:44.630000: y'a eu un AMA qui confirmait que les saves seraient compatible
+
+NEW MESSAGE 2018-03-14 22:49:22.570000: !len
+
+NEW MESSAGE 2018-03-14 22:49:31.363000: !list
+
+NEW MESSAGE 2018-03-14 22:50:10.400000: Par contre <@423568234739007509> et <@234041982022844416> moyen de go sur le <#170847914627694592> svp? 😃
+
+NEW MESSAGE 2018-03-14 22:50:49.935000: Np Np 😃
+
+NEW MESSAGE 2018-03-14 23:04:41.023000: Non pourquoi <@294348098917105664> ?
+
+NEW MESSAGE 2018-03-14 23:04:54.239000: !len
+
+NEW MESSAGE 2018-03-14 23:05:21.448000: <@164076488294006785> techniquement 80 personnes nous ont rejoint ce soir
+
+NEW MESSAGE 2018-03-14 23:05:27.774000: 10% du serveur
+
+NEW MESSAGE 2018-03-14 23:06:05.303000: <@294348098917105664> relou à faire et aurait nécessité que je redémarre le bot, j'allais pas le faire avant le dernier tirage au sort, ça aurait été un troll <:troll:335149994170384385>
+
+NEW MESSAGE 2018-03-14 23:06:07.268000: <:troll:335149994170384385>
+
+NEW MESSAGE 2018-03-14 23:06:24.483000: Mieux vaut tard que jamais <@419960339220922378> 😃
+
+NEW MESSAGE 2018-03-14 23:07:25.471000: wow pour une fois <@164076488294006785> n'a pas révélé la surprise des 50k <:troll:335149994170384385>
+
+NEW MESSAGE 2018-03-14 23:07:30.581000: <:troll:335149994170384385>
+
+NEW MESSAGE 2018-03-14 23:08:41.697000: C'est pas genre la 3ème fois que tu lui souhaite?
+
+NEW MESSAGE 2018-03-14 23:09:02.850000: JAYS EST UN LEPREUCHAUME CONFIRMED
+
+NEW MESSAGE 2018-03-14 23:09:32.798000: Et le glorieux <@398955237311774721> te répondra si t'es inscrit ou pas , homme qui posait la question sur le live
+
+NEW MESSAGE 2018-03-14 23:10:02.830000: <@164076488294006785> djibaw dort
+
+NEW MESSAGE 2018-03-14 23:11:20.580000: <@423567995609022464> <@326766443456888832> <@305440522904928257> <@410892920003231744> <@297975388183986177> GG à vous
+
+NEW MESSAGE 2018-03-14 23:11:52.338000: 10/10 mdr
+
+NEW MESSAGE 2018-03-14 23:12:24.108000: JE SUIS UN FOU UN GUEUDIN
+
+NEW MESSAGE 2018-03-14 23:12:36.187000: JE SUIS UN GROS GUEDIN
+
+NEW MESSAGE 2018-03-14 23:12:40.203000: !roll
+
+NEW MESSAGE 2018-03-14 23:12:53.094000: <@374561629704290304> TU GAGNERA UN LEPREUCHAUME DEMAIN
+
+NEW MESSAGE 2018-03-14 23:13:36.395000: Khyinn​:ça va﻿ être tout noir...
+Fea​:c'est une préview du prochain épisode de﻿ KC:DF
+
+NEW MESSAGE 2018-03-14 23:14:08.207000: ET UN DEUXIEME POUR LA ROUTE
+
+NEW MESSAGE 2018-03-14 23:14:24.029000: QUE LA CLAMEUR DE LA FOULE M'ACCLAME
+
+NEW MESSAGE 2018-03-14 23:14:28.677000: ET JE TIRERAIS UN AUTRE AU SORT
+
+NEW MESSAGE 2018-03-14 23:16:14.763000: <@308667583606030338> NON
+
+NEW MESSAGE 2018-03-14 23:16:29.696000: CAR LA FOULE M'ACCLAME
+
+NEW MESSAGE 2018-03-14 23:16:37.863000: THE ROWL OF THE CROWN
+
+NEW MESSAGE 2018-03-14 23:16:40.493000: !roll
+
+NEW MESSAGE 2018-03-14 23:16:47.984000: <@!184018254136737793> FELICITATION
+
+NEW MESSAGE 2018-03-14 23:16:51.707000: NAN FAIT PAS ça

@@ -1,0 +1,26 @@
+
+NEW MESSAGE 2018-04-13 12:00:30.876000: EOI IV
+
+NEW MESSAGE 2018-04-13 12:01:35.139000: AOI*
+
+--------------------------------------------------------
+EDIT Nerberius Vult at None
+OLD MESSAGE
+:EOI IV
+NEW MESSAGE
+:AOE IV
+--------------------------------------------------------
+EDIT Nerberius Vult at None
+OLD MESSAGE
+:AOI*
+NEW MESSAGE
+:AOE
+NEW MESSAGE 2018-04-13 12:02:02.435000: age of empire
+
+NEW MESSAGE 2018-04-13 12:11:48.837000: plait-il ?
+
+NEW MESSAGE 2018-04-13 12:12:44.241000: c'est un remaster c'est pas un opus en soit
+
+NEW MESSAGE 2018-04-13 12:13:29.686000: c'est comme si tu me disais que l'édition spécial de TES5 était un 6ème opus
+
+NEW MESSAGE 2018-04-13 12:14:03.862000: oui bah techniquement tout les exemples précédent sont sorti
