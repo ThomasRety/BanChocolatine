@@ -249,6 +249,14 @@ async def on_message(message):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
 
+    if (message.content.lower().startswith("salut") and message.channel.id == "411438942613667844"):
+        await client.send_message(message.channel, "Salut " + message.author.name)
+        return
+
+    if (message.content.lower().startswith("bonsoir") and message.channel.id == "411438942613667844"):
+        await client.send_message(message.channel, "Bonsoir " + message.author.name)
+        return
+
     if (message.content.lower().startswith("!me")):
         await client.send_message(message.channel, "Ton compte a été créé le " + str(message.author.created_at))
         return
