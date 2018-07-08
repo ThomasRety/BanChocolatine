@@ -148,6 +148,7 @@ def insertServer(server):
             f = "INSERT INTO server(welcomeMessage, isWelcomeMP, idServer) VALUES("", 2, '{}')".format(idServer)
             executeCommand(f)
         else:
+            return
     except Exception as E:
         print ("Insert Player Exception : ", E)
 
