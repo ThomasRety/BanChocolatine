@@ -72,7 +72,7 @@ def isWelcomeMP(server):
     return (row[0][0])
 
 def setWelcomeMessage(server, content):
-    f = "UPDATE server SET welcomeMessage = '{}' WHERE idServer = '{}'".format(server.id)
+    f = "UPDATE server SET welcomeMessage = '{}' WHERE idServer = '{}'".format(content, server.id)
     executeCommand(f)
 
 def setIsWelcomeMP(server, a):
