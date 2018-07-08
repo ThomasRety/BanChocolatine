@@ -61,6 +61,24 @@ def executeCommand(f):
     conn.close()
     return (row)
 
+def getWelcomeMessage(server):
+    f = "SELECT welcomeMessage FROM server WHERE idServer = '{}'".format(server.id)
+    row = executeCommand(f)
+    return (row[0][0])
+
+def isWelcomeMP(server):
+    f = "SELECT isWelcomeMP FROM server WHERE idServer = '{}'".format(server.id)
+    row = executeCommand(f)
+    return (row[0][0])
+
+def setWelcomeMessage(server, content):
+    f = "UPDATE server SET welcomeMessage = '{}' WHERE idServer = '{}'".format(server.id)
+    executeCommand(f)
+
+def setIsWelcomeMP(server, a):
+    f = "UPDATE server SET isWelcomeMP = {} WHERE idServer = '{}'".format(str(a), server.id)
+    executeCommand(f)
+    
 def setAuthorizationLevel(idServer, idPlayer, authorizationLevel):
     f = "UPDATE player SET authorizationLevel = {} WHERE idPlayer = '{}' AND idServer = '{}'".format(str(authorizationLevel), idPlayer, idServer)
     executeCommand(f)
@@ -115,6 +133,21 @@ def insertPlayer(message):
         else:
             f = "UPDATE player SET name = '{}' WHERE idPlayer = '{}' AND idServer = '{}'".format(name, idPlayer, idServer)
             executeCommand(f)
+    except Exception as E:
+        print ("Insert Player Exception : ", E)
+
+
+def insertServer(server):
+    idServer = server.id
+    f = "SELECT idServer FROM server WHERE idServer = '{}'".format(idServer)
+    row = executeCommand(f)
+    try:
+        if row is False:
+            return
+        if len(row) == 0:
+            f = "INSERT INTO server(welcomeMessage, isWelcomeMP, idServer) VALUES("", 2, '{}')".format(idServer)
+            executeCommand(f)
+        else:
     except Exception as E:
         print ("Insert Player Exception : ", E)
 
@@ -199,6 +232,7 @@ def lenInscrit(idServer):
 @client.event
 async def on_message(message):
     insertPlayer(message)
+    insertServer(message.server)
     authorizationLevel = getAuthorizationLevel(message)
     if (client.user.id == message.author.id):
         return
@@ -399,8 +433,26 @@ async def on_message(message):
         message = await client.wait_for_message(check=check2)
         await client.purge_from(message.channel, limit=nbMessage)
         await client.send_message(message.channel, "Votre demande de purge a bien été effectuée et a été inscrite au registre des purges. Bonnes journées Commandant!")
-    if authorizationLevel < 4:
+    if authorizationLevel < 2:
         return
+
+    if (message.content.lower().startswith("!configure welcomemessage")):
+        content = message.content[len("!configure welcomemessage "):]
+        setWelcomeMessage(message.server, content)
+        return
+
+    if (message.content.lower().startswith("!configure welcomemp")):
+        content = message.content[len("!configure welcomemp "):]
+        try:
+            content = int(content)
+            if (content != 0 and content != 1):
+                await client.send_message(message.channel, "Error: You must set welcomeMP to 1 or 0\n")
+            else:
+                setIsWelcomeMP(message.server, content)
+        except:
+                await client.send_message(message.channel, "Error: You must set welcomeMP to 1 or 0\n")
+        return
+
 
     if (message.content.startswith("!emojis")):
         listEmojis = message.server.emojis
@@ -416,7 +468,19 @@ async def on_message(message):
             idPlayer = message.content[len("!cia deactivate"):]
             deleteCIA_FILES(idPlayer)
             print("CIA DEACTIVATED PLAYER ", idPlayer)
-        
+
+@client.event
+async def on_member_join(member):
+    mp = isWelcomeMP(member.server)
+    if (mp == 2):
+        return
+    message = getWelcomeMessage(member.server)
+    if (mp == 1):
+        await client.send_message(member, message)
+    else:
+        await client.send_message(member.server.default_channel, message)
+
+
 @client.event
 async def on_message_edit(before, after):
     LIST_CIA_FILES = getCIA_FILES(before.server.id)
