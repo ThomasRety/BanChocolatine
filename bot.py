@@ -439,7 +439,7 @@ async def on_message(message):
 
     if (message.content.lower().startswith("!configure welcomemessage")):
         content = message.content[len("!configure welcomemessage "):]
-        setWelcomeMessage(message.server, content)
+        setWelcomeMessage(message.server, safeData(content))
         return
 
     if (message.content.lower().startswith("!configure welcomemp")):
