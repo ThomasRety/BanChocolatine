@@ -145,7 +145,7 @@ def insertServer(server):
         if row is False:
             return
         if len(row) == 0:
-            f = "INSERT INTO server(welcomeMessage, isWelcomeMP, idServer) VALUES("", 2, '{}')".format(idServer)
+            f = "INSERT INTO server(welcomeMessage, isWelcomeMP, idServer) VALUES('', 2, '{}')".format(idServer)
             executeCommand(f)
         else:
             return
