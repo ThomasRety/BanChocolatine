@@ -40,11 +40,8 @@ def getListId():
         
 
 def safeData(text):
-    a = ""
-    b = re.compile("[^']").findall(text)
-    for letter in b:
-        a += letter
-    return a
+    str = text.replace("'", " ")
+    return str
 
 def executeCommand(f):
     global dbPath
