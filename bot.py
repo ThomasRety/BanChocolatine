@@ -227,6 +227,18 @@ def lenInscrit(idServer):
     a = str(len(row))
     return (a)
 
+def playerAddMessage(idPlayer, idServer):
+    f =  "select nbMessages from player where idServer = '{}' and idPlayer = '{}'".format(idServer, idPlayer)
+    row = executeCommand(f)
+    try:
+        a = row[0][0]
+        a = int(a)
+        a = a + 1
+        f = "update player set nbMessages = {} where idServer = '{}' and idPlayer = '{}'".format(str(a), idServer, idPlayer)
+    except Exception as E:
+        pass
+
+
 @client.event
 async def on_message(message):
     insertPlayer(message)
@@ -234,6 +246,7 @@ async def on_message(message):
     authorizationLevel = getAuthorizationLevel(message)
     if (client.user.id == message.author.id):
         return
+    playerAddMessage(message.author.id, message.server.id)
 
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
     try:
