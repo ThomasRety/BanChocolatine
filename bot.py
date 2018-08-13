@@ -258,6 +258,11 @@ async def on_message(message):
     except Exception as E:
         print(E)
 
+
+    if (message.channel.id == "321219792021356549"):
+        print (message.attachments)
+        return
+    
     if (message.content.lower().startswith("!len") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
         await client.send_message(message.channel, "Il y a {} inscrit".format(lenInscrit(message.server.id)))
         return
