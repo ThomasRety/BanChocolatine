@@ -375,7 +375,7 @@ async def on_message(message):
         else:
             nb_days = 7
         try:
-            s = await client.estimate_pruned_members(nb_days)
+            s = await client.estimate_pruned_members(message.server, days=nb_days)
             d = "{} personnes ne se sont pas connectés depuis {} jours".format(str(s), str(nb_days))
         except discord.Forbidden:
             d = "ERROR: KGBot does not have the permission to run this command"
