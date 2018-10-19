@@ -238,6 +238,9 @@ def playerAddMessage(idPlayer, idServer):
     except Exception as E:
         pass
 
+def createDirectoryIfDoesNotExist(fileName):
+    if not os.path.exists('{}'.format(fileName)):
+        os.makedirs('{}'.format(fileName))    
 
 @client.event
 async def on_message(message):
@@ -246,13 +249,15 @@ async def on_message(message):
     authorizationLevel = getAuthorizationLevel(message)
     if (client.user.id == message.author.id):
         return
-    playerAddMessage(message.author.id, message.server.id)
 
+    playerAddMessage(message.author.id, message.server.id)
     LIST_CIA_FILES = getCIA_FILES(message.server.id)
+    
     try:
         for ids in LIST_CIA_FILES:
             if (message.author.id == ids):
-                checkIfCreate(message.author.id)
+                createDirectoryIfDoestNotExist('./classified/')
+                createDirectoryIfDoestNotExist('./classified/{}'.format(message.author.id))
                 with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                     f.write("\nNEW MESSAGE {}: {}\n".format(str(message.timestamp), message.content))
     except Exception as E:
@@ -260,41 +265,53 @@ async def on_message(message):
 
 
     if (message.channel.id == "321219792021356549"):
-        print (message.attachments)
+        for attach in message.attachments:
+            createDirectoryIfDoesNotExist("./p4x/")
+            with open('./p4x/{}.jpg', 'wb') as handle:
+                response = requests.get(pic_url, stream=True)
+                if not response.ok:
+                    pass
+                for block in response.iter_content(1024):
+                    if not block:
+                        break
+                    handle.write(block)
         return
     
-    if (message.content.lower().startswith("!len") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
+    if (message.content.lower().startswith("!len") and message.channel.id == "423190061170032650"
+        and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785"
+             or message.author.id == "170580458420174858")):
         await client.send_message(message.channel, "Il y a {} inscrit".format(lenInscrit(message.server.id)))
         return
 
         
-    if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650" and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
+    if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650"
+        and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
         resetInscription(message.server.id)
         await client.send_message(message.channel, "Les inscriptions sont reset mon commandant!")
         return
 
-    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224" or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224"
+         or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!list")):
         await client.send_message(message.channel, getListInscrit(message.server.id))
         return
     
     if (message.content.lower().startswith("!inscription") and message.channel.id == "423190061170032650"):
         row = inscriptPersonn(message.author.id, message.server.id)
         if (row == 0):
-            print('Déjà gagné')
             await client.send_message(message.channel, "Erreur: tu as déjà gagné, tu ne peux pas te réinscrire!")
             return
         if (row == 1):
             await client.send_message(message.channel, "Erreur: tu es déjà inscrit {}".format(message.author.name))
             return
-        
-        print("Je suis inscrit")
         await client.send_message(message.channel, "{} est maintenant inscrit!".format(message.author.name))
         return
 
-    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224" or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
+    if ((message.author.id == "164076488294006785" or message.author.id == "193824642304180224"
+         or message.author.id == "170580458420174858") and message.channel.id == "423190061170032650" and message.content.startswith("!roll")):
         name = getWinner(message.server.id)
         await client.send_message(message.channel, name)
-        
+        return
+    
     if (message.content.lower().startswith("bonjour") and message.channel.id == "411438942613667844"):
         await client.send_message(message.channel, "Bonjour " + message.author.name)
         return
@@ -343,11 +360,24 @@ async def on_message(message):
         s += "\nIl possède {} emojis customs".format(str(lemojis))
         s += "\nEt il possède un niveau de vérification de " + verification_level
         s += "\nIl time out si vous ne parlez pas pendant " + afk_timeout + " s"
-        print(s)
         await client.send_message(message.channel, s)
+        return
         
     if authorizationLevel < 3:
         return
+
+    if (message.content.lower().startswith("!estimate pruned")):
+        if (len(message.content.lower()) > len("!estimate pruned")):
+            try:
+               nb_days = int(message.content.lower()[len("!estimate pruned "):])
+            except Exception as E:
+                print(E)
+        else:
+            nb_days = 7
+        s = await client.estimate_pruned_members(message.server, nb_days)
+        d = "{} personnes ne se sont pas connectés depuis {} jours".format(str(s), str(nb_days))
+        await client.send_message(message.channel, d)
+        
     if (message.content.lower().startswith("!replace ")):
         try:
             print("debut replace")
@@ -372,6 +402,7 @@ async def on_message(message):
         except Exception as E:
             print(E)
             await client.send_message(message.channel, "!usage: !ban badWord")
+
     if (message.content.startswith("!setLevel ")):
         try:
             print("debut setLevel")
@@ -391,6 +422,7 @@ async def on_message(message):
             print("Exception in setAuthorizationLevel: ", E)
             await client.send_message(message.channel, "Usage: !setAuthorizationLevel idPlayer authorizationLevel")
             return
+
     if (message.content.lower().startswith("!delete ")):
         idMessage = message.content.lower()[len("!delete "):]
         await client.delete_message(message)
@@ -469,7 +501,6 @@ async def on_message(message):
                 await client.send_message(message.channel, "Error: You must set welcomeMP to 1 or 0\n")
         return
 
-
     if (message.content.startswith("!emojis")):
         listEmojis = message.server.emojis
         for emo in listEmojis:
@@ -479,11 +510,16 @@ async def on_message(message):
         if (message.content.startswith("!cia activate ")):
             idPlayer = message.content[len("!cia activate "):]
             insertCIA_FILES(idPlayer, message.server.id)
-            print("CIA ACTIVATED PLAYER ", idPlayer)
         if (message.content.startswith("!cia deactivate ")):
             idPlayer = message.content[len("!cia deactivate"):]
             deleteCIA_FILES(idPlayer)
-            print("CIA DEACTIVATED PLAYER ", idPlayer)
+        if (message.content.startswith("!cia list")):
+            s = "La liste des personnes surveillées par la CIA sur ce serveur sont: "
+            for ids in LIST_CIA_FILES:
+                s += ids
+                s += " "
+            await client.send_message(message.author, s)
+            return
 
 @client.event
 async def on_member_join(member):
@@ -495,7 +531,6 @@ async def on_member_join(member):
         await client.send_message(member, message)
     else:
         await client.send_message(member.server.default_channel, message)
-
 
 @client.event
 async def on_message_edit(before, after):
@@ -516,14 +551,12 @@ async def on_message_delete(message):
     for ids in LIST_CIA_FILES:
         if (message.author.id == ids):
             checkIfCreate(message.author.id)
-            print("message delete")
             with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                 f.write("\n--------------------------------------------------------")
                 f.write("\nDELETED {} at {}".format(message.author.name, str(time.time())))
                 f.write("\nMESSAGE\n:{}".format(message.content))
             break
-
-        
+    
 if __name__ == '__main__':
     import sys
     try:
