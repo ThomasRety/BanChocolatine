@@ -374,8 +374,11 @@ async def on_message(message):
                 print(E)
         else:
             nb_days = 7
-        s = await client.estimate_pruned_members(message.server, nb_days)
-        d = "{} personnes ne se sont pas connectés depuis {} jours".format(str(s), str(nb_days))
+        try:
+            s = await client.estimate_pruned_members(nb_days)
+            d = "{} personnes ne se sont pas connectés depuis {} jours".format(str(s), str(nb_days))
+        except discord.Forbidden:
+            d = "ERROR: KGBot does not have the permission to run this command"
         await client.send_message(message.channel, d)
         
     if (message.content.lower().startswith("!replace ")):
