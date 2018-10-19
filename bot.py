@@ -256,8 +256,8 @@ async def on_message(message):
     try:
         for ids in LIST_CIA_FILES:
             if (message.author.id == ids):
-                createDirectoryIfDoestNotExist('./classified/')
-                createDirectoryIfDoestNotExist('./classified/{}'.format(message.author.id))
+                createDirectoryIfDoesNotExist('./classified/')
+                createDirectoryIfDoesNotExist('./classified/{}'.format(message.author.id))
                 with open("./classified/{}/{}.txt".format(message.author.id, message.channel.name), 'a') as f:
                     f.write("\nNEW MESSAGE {}: {}\n".format(str(message.timestamp), message.content))
     except Exception as E:
