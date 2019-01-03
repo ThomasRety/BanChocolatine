@@ -283,6 +283,17 @@ async def on_message(message):
         await client.send_message(message.channel, "Il y a {} inscrit".format(lenInscrit(message.server.id)))
         return
 
+    if (message.content.lower().startswith("!join")):
+        try:
+            if message.author.voice.voice_channel is not False:
+                if (client.voice_client_in(message.server) is None):
+                    await client.join_voice_channel(message.author.voice.voice_channel)
+                else:
+                    await client.voice_client_in(message.server).disconnect()
+                    await client.join_voice_channel(message.author.voice.voice_channel)
+        except Exception as E:
+            await client.send_message(message.channel, E)
+
         
     if (message.content.lower().startswith("!reset inscription") and message.channel.id == "423190061170032650"
         and (message.author.id == "193824642304180224" or message.author.id == "164076488294006785" or message.author.id == "170580458420174858")):
@@ -567,4 +578,5 @@ if __name__ == '__main__':
     except:
         print('USAGE: python3 bot.py TOKENBOT')
         sys.exit(1)
+    discord.opus.load_opus("KGBot")
     client.run(TOKEN)
