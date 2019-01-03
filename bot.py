@@ -585,5 +585,6 @@ if __name__ == '__main__':
             # you should replace this with the location the
             # opus library is located in and with the proper filename.
             # note that on windows this DLL is automatically provided for you
-            discord.opus.load_opus('opus')
+        print("OPUS NOT LOADED")
+        sys.exit(42)
     client.run(TOKEN)
