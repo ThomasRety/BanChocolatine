@@ -427,7 +427,8 @@ async def on_message(message):
             idPlayer = safeData(tab[1])
             clientName = getName(idPlayer, message.server.id)
             if not clientName:
-                await client.send_message(message.channel, "Erreur, l'usager n'existe pas!")                
+                await client.send_message(message.channel, "Erreur, l'usager n'existe pas!")
+                return
             newAuth = int(safeData(tab[2]))
             if newAuth > 4 or newAuth < 0:
                 await client.send_message(message.channel, "Erreur: le level d'autorisation doit-être compris entre 0 et 4.")
