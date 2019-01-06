@@ -263,7 +263,10 @@ async def on_message(message):
     except Exception as E:
         print(E)
 
-
+    if (message.content.lower().startswith("!mylevel")):
+        await client.send_message(message.channel, "You are habilitated at the level: {}".format(str(authorizationLevel)))
+        return
+    
     if (message.channel.id == "321219792021356549"):
         for attach in message.attachments:
             createDirectoryIfDoesNotExist("./p4x/")
