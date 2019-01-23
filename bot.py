@@ -395,20 +395,7 @@ async def on_message(message):
             d = "ERROR: KGBot does not have the permission to run this command"
         await client.send_message(message.channel, d)
         
-    if (message.content.lower().startswith("!replace ")):
-        try:
-            print("debut replace")
-            message.content = message.content[len("!replace "):]
-            tab = message.content.split('|')
-            firstWord = tab[0]
-            secondWord = tab[1]
-            insertEditWords(message.server.id, firstWord, secondWord)
-            await client.send_message(message.channel, "Effectué!")
-            print("fin replace")
-        except Exception as E:
-            print(E)
-            await client.send_message(message.channel, "usage: !replace badWord|goodWord")
-    if (message.content.startswith("!ban ")):
+    if (message.content.startswith("!banword ")):
         try:
             print("debut ban")
             tab = message.content.split(' ')
@@ -430,6 +417,9 @@ async def on_message(message):
                 await client.send_message(message.channel, "Erreur, l'usager n'existe pas!")
                 return
             newAuth = int(safeData(tab[2]))
+            if newAuth > authorizationLevel:
+                await client.send_message(message.channel, "Erreur: vous ne pouvez pas habiliter quelqu'un à un niveau supérieur au votre!")
+                return
             if newAuth > 4 or newAuth < 0:
                 await client.send_message(message.channel, "Erreur: le level d'autorisation doit-être compris entre 0 et 4.")
                 return
@@ -441,8 +431,8 @@ async def on_message(message):
             await client.send_message(message.channel, "Usage: !setAuthorizationLevel idPlayer authorizationLevel")
             return
 
-    if (message.content.lower().startswith("!delete ")):
-        idMessage = message.content.lower()[len("!delete "):]
+    if (message.content.lower().startswith("!delete message")):
+        idMessage = message.content.lower()[len("!delete message "):]
         await client.delete_message(message)
         await client.delete_message(idMessage)
                 
@@ -591,4 +581,9 @@ if __name__ == '__main__':
             # note that on windows this DLL is automatically provided for you
         #print("OPUS NOT LOADED")
         #sys.exit(42)
-    client.run(TOKEN)
+    while (True):
+        try:
+            client.run(TOKEN)
+        except:
+            pass
+        
