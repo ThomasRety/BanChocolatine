@@ -263,6 +263,11 @@ async def on_message(message):
     except Exception as E:
         print(E)
 
+    if (message.content.lower().startswith("!embed")):
+        em = discord.Embed(title='My Embed Title', description='My Embed Content.', colour=0xDEADBF)
+        em.set_author(name='Someone', icon_url=client.user.default_avatar_url)
+        await client.send_message(message.channel, embed=em)
+        
     if (message.content.lower().startswith("!mylevel")):
         await client.send_message(message.channel, "You are habilitated at the level: {}".format(str(authorizationLevel)))
         return
