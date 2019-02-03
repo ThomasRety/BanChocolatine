@@ -519,7 +519,7 @@ async def on_message(message):
         for emo in listEmojis:
             await client.add_reaction(message, emo)
 
-    if (message.content.startswith("!listmembers")):
+    if (message.content.lower().startswith("!listmembers")):
         members = message.server.members
 
         def sorting_date(element):
@@ -530,7 +530,7 @@ async def on_message(message):
         for member in sortedList:
             a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
         print(a)
-        print(type(a))
+        print(len(a))
         await client.send_message(message.channel, a)
         
     if (message.content.startswith("!cia ")):
