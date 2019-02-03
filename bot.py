@@ -519,9 +519,8 @@ async def on_message(message):
         for emo in listEmojis:
             await client.add_reaction(message, emo)
 
-    if (message.content.startswith("!!listmembers")):
+    if (message.content.startswith("!listmembers")):
         members = message.server.members
-        today = time.time()
 
         def sorting_date(element):
             return (element.joined_at())
