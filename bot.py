@@ -527,8 +527,10 @@ async def on_message(message):
 
         sortedList = sorted(members, key=sorting_date)
         a = ""
+        i = 1
         for member in sortedList:
-            a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
+            a = a + "{} a rejoint le {}. C'est le membre numéro [{}]\n".format(str(member.name), str(member.joined_at), str(i))
+            i = i + 1
         if (len(a) >= 2000):
             while (len(a) >= 0):
                 b = a[:2000]
