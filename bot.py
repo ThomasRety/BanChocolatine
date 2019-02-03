@@ -530,7 +530,7 @@ async def on_message(message):
         for member in sortedList:
             a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
         if (len(a) >= 2000):
-            while (len(a) >= 2000):
+            while (len(a) >= 0):
                 b = a[:2000]
                 a = a[2000:]
                 await client.send_message(message.channel, b)
