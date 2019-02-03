@@ -518,7 +518,20 @@ async def on_message(message):
         listEmojis = message.server.emojis
         for emo in listEmojis:
             await client.add_reaction(message, emo)
-            
+
+    if (message.content.startswith("!!listmembers")):
+        members = message.server.members
+        today = time.time()
+
+        def sorting_date(element):
+            return (element.joined_at())
+
+        sortedList = sorted(members, key=sorting_date)
+        a = ""
+        for member in sortedList:
+            a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at()))
+        await client.send_message(message.channel, a)
+        
     if (message.content.startswith("!cia ")):
         if (message.content.startswith("!cia activate ")):
             idPlayer = message.content[len("!cia activate "):]
