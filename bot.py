@@ -523,12 +523,12 @@ async def on_message(message):
         members = message.server.members
 
         def sorting_date(element):
-            return (element.joined_at())
+            return (element.joined_at)
 
         sortedList = sorted(members, key=sorting_date)
         a = ""
         for member in sortedList:
-            a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at()))
+            a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
         await client.send_message(message.channel, a)
         
     if (message.content.startswith("!cia ")):
