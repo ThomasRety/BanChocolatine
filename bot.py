@@ -529,9 +529,14 @@ async def on_message(message):
         a = ""
         for member in sortedList:
             a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
-        print(a)
-        print(len(a))
-        await client.send_message(message.channel, a)
+        if (len(a) >= 2000):
+            while (len(a) >= 2000):
+                b = a[:2000]
+                a = a[2000:]
+                await client.send_message(message.channel, b)
+        else:
+            await client.send_message(message.channel, a)
+                
         
     if (message.content.startswith("!cia ")):
         if (message.content.startswith("!cia activate ")):
