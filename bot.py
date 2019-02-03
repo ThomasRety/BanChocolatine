@@ -529,6 +529,7 @@ async def on_message(message):
         a = ""
         for member in sortedList:
             a = a + "{} a rejoint le {}\n".format(str(member.name), str(member.joined_at))
+        print(a)
         await client.send_message(message.channel, a)
         
     if (message.content.startswith("!cia ")):
